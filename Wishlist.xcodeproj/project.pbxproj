@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F16378F211C9BF30035A1AD /* AppsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16378E211C9BF30035A1AD /* AppsListPresenter.swift */; };
+		9F163791211CA0790035A1AD /* AppInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F163790211CA0790035A1AD /* AppInfoResponse.swift */; };
 		9F2E6F0221136C6400441C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E6F0121136C6400441C1B /* AppDelegate.swift */; };
-		9F2E6F0421136C6400441C1B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E6F0321136C6400441C1B /* FirstViewController.swift */; };
+		9F2E6F0421136C6400441C1B /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E6F0321136C6400441C1B /* ListVC.swift */; };
 		9F2E6F0621136C6400441C1B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E6F0521136C6400441C1B /* SecondViewController.swift */; };
 		9F2E6F0921136C6400441C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E6F0721136C6400441C1B /* Main.storyboard */; };
 		9F2E6F0B21136C6600441C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E6F0A21136C6600441C1B /* Assets.xcassets */; };
 		9F2E6F0E21136C6600441C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E6F0C21136C6600441C1B /* LaunchScreen.storyboard */; };
 		9F2E6F1921136C6600441C1B /* WishlistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E6F1821136C6600441C1B /* WishlistTests.swift */; };
 		9F2E6F2421136C6600441C1B /* WishlistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E6F2321136C6600441C1B /* WishlistUITests.swift */; };
+		9F2E6F3421136D9800441C1B /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E6F3221136D9800441C1B /* ListCell.swift */; };
+		9F2E6F3521136D9800441C1B /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E6F3321136D9800441C1B /* ListCell.xib */; };
+		9F2E704B211C838600441C1B /* AppInfoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E704A211C838600441C1B /* AppInfoLoader.swift */; };
+		9F2E704D211C904400441C1B /* AppsKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E704C211C904400441C1B /* AppsKeeper.swift */; };
+		9F2E704F211C911F00441C1B /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E704E211C911F00441C1B /* AppInfo.swift */; };
+		9F2E7051211C971200441C1B /* AppListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E7050211C971200441C1B /* AppListItem.swift */; };
+		BE04A0B56455D80C54F05F7E /* Pods_Wishlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D167DF153ED084467829D149 /* Pods_Wishlist.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		058CB69EBCA240D763F1CE51 /* Pods-Wishlist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wishlist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wishlist/Pods-Wishlist.release.xcconfig"; sourceTree = "<group>"; };
+		73E68C71A127DEEA5C8DD170 /* Pods-Wishlist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wishlist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wishlist/Pods-Wishlist.debug.xcconfig"; sourceTree = "<group>"; };
+		9F16378E211C9BF30035A1AD /* AppsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsListPresenter.swift; sourceTree = "<group>"; };
+		9F163790211CA0790035A1AD /* AppInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoResponse.swift; sourceTree = "<group>"; };
 		9F2E6EFE21136C6400441C1B /* Wishlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wishlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F2E6F0121136C6400441C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F2E6F0321136C6400441C1B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		9F2E6F0321136C6400441C1B /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		9F2E6F0521136C6400441C1B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9F2E6F0821136C6400441C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F2E6F0A21136C6600441C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +62,13 @@
 		9F2E6F1F21136C6600441C1B /* WishlistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WishlistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F2E6F2321136C6600441C1B /* WishlistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistUITests.swift; sourceTree = "<group>"; };
 		9F2E6F2521136C6600441C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F2E6F3221136D9800441C1B /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		9F2E6F3321136D9800441C1B /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		9F2E704A211C838600441C1B /* AppInfoLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoLoader.swift; sourceTree = "<group>"; };
+		9F2E704C211C904400441C1B /* AppsKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsKeeper.swift; sourceTree = "<group>"; };
+		9F2E704E211C911F00441C1B /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		9F2E7050211C971200441C1B /* AppListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListItem.swift; sourceTree = "<group>"; };
+		D167DF153ED084467829D149 /* Pods_Wishlist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wishlist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE04A0B56455D80C54F05F7E /* Pods_Wishlist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +97,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E83F38AC93CA9BCAC07FFEC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				73E68C71A127DEEA5C8DD170 /* Pods-Wishlist.debug.xcconfig */,
+				058CB69EBCA240D763F1CE51 /* Pods-Wishlist.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		993762F087E8B2B3F3BC50EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D167DF153ED084467829D149 /* Pods_Wishlist.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9F2E6EF521136C6400441C1B = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +121,8 @@
 				9F2E6F1721136C6600441C1B /* WishlistTests */,
 				9F2E6F2221136C6600441C1B /* WishlistUITests */,
 				9F2E6EFF21136C6400441C1B /* Products */,
+				7E83F38AC93CA9BCAC07FFEC /* Pods */,
+				993762F087E8B2B3F3BC50EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +139,15 @@
 		9F2E6F0021136C6400441C1B /* Wishlist */ = {
 			isa = PBXGroup;
 			children = (
+				9F2E6F3621136DD300441C1B /* API */,
+				9F2E6F3121136D7500441C1B /* List */,
 				9F2E6F0121136C6400441C1B /* AppDelegate.swift */,
-				9F2E6F0321136C6400441C1B /* FirstViewController.swift */,
 				9F2E6F0521136C6400441C1B /* SecondViewController.swift */,
 				9F2E6F0721136C6400441C1B /* Main.storyboard */,
 				9F2E6F0A21136C6600441C1B /* Assets.xcassets */,
 				9F2E6F0C21136C6600441C1B /* LaunchScreen.storyboard */,
 				9F2E6F0F21136C6600441C1B /* Info.plist */,
+				9F2E704C211C904400441C1B /* AppsKeeper.swift */,
 			);
 			path = Wishlist;
 			sourceTree = "<group>";
@@ -128,6 +170,28 @@
 			path = WishlistUITests;
 			sourceTree = "<group>";
 		};
+		9F2E6F3121136D7500441C1B /* List */ = {
+			isa = PBXGroup;
+			children = (
+				9F2E6F0321136C6400441C1B /* ListVC.swift */,
+				9F2E6F3221136D9800441C1B /* ListCell.swift */,
+				9F2E6F3321136D9800441C1B /* ListCell.xib */,
+				9F2E7050211C971200441C1B /* AppListItem.swift */,
+				9F16378E211C9BF30035A1AD /* AppsListPresenter.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		9F2E6F3621136DD300441C1B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9F163790211CA0790035A1AD /* AppInfoResponse.swift */,
+				9F2E704E211C911F00441C1B /* AppInfo.swift */,
+				9F2E704A211C838600441C1B /* AppInfoLoader.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F2E6F2821136C6600441C1B /* Build configuration list for PBXNativeTarget "Wishlist" */;
 			buildPhases = (
+				ADFEBE707ED2D8DF706A8B39 /* [CP] Check Pods Manifest.lock */,
 				9F2E6EFA21136C6400441C1B /* Sources */,
 				9F2E6EFB21136C6400441C1B /* Frameworks */,
 				9F2E6EFC21136C6400441C1B /* Resources */,
+				797202B0A8B23BBCFB7FACF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F2E6F0E21136C6600441C1B /* LaunchScreen.storyboard in Resources */,
+				9F2E6F3521136D9800441C1B /* ListCell.xib in Resources */,
 				9F2E6F0B21136C6600441C1B /* Assets.xcassets in Resources */,
 				9F2E6F0921136C6400441C1B /* Main.storyboard in Resources */,
 			);
@@ -254,14 +321,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		797202B0A8B23BBCFB7FACF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Wishlist/Pods-Wishlist-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wishlist/Pods-Wishlist-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADFEBE707ED2D8DF706A8B39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wishlist-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9F2E6EFA21136C6400441C1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2E7051211C971200441C1B /* AppListItem.swift in Sources */,
+				9F16378F211C9BF30035A1AD /* AppsListPresenter.swift in Sources */,
 				9F2E6F0621136C6400441C1B /* SecondViewController.swift in Sources */,
+				9F2E6F3421136D9800441C1B /* ListCell.swift in Sources */,
 				9F2E6F0221136C6400441C1B /* AppDelegate.swift in Sources */,
-				9F2E6F0421136C6400441C1B /* FirstViewController.swift in Sources */,
+				9F2E704D211C904400441C1B /* AppsKeeper.swift in Sources */,
+				9F163791211CA0790035A1AD /* AppInfoResponse.swift in Sources */,
+				9F2E6F0421136C6400441C1B /* ListVC.swift in Sources */,
+				9F2E704B211C838600441C1B /* AppInfoLoader.swift in Sources */,
+				9F2E704F211C911F00441C1B /* AppInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +553,7 @@
 		};
 		9F2E6F2921136C6600441C1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73E68C71A127DEEA5C8DD170 /* Pods-Wishlist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +572,7 @@
 		};
 		9F2E6F2A21136C6600441C1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 058CB69EBCA240D763F1CE51 /* Pods-Wishlist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

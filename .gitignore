@@ -1,0 +1,5 @@
+build/
+DerivedData
+Pods/
+xcuserdata
+Wishlist.xcodeproj/project.xcworkspace/xcuserdata
