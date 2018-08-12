@@ -1,23 +1,40 @@
 class AppsListPresenter: AppInfoLoaderDelegate {
 
-    let infoLoader = AppInfoLoader()
+    var infoLoaders: [AppInfoLoader] = []
+    var items: [AppListItem] = []
     weak var controller: ListVC?
 
     func getAppsInfo() {
-        infoLoader.delegate = self
         let appIds = AppsKeeper.getSavedAppIds()
-        if let appId = appIds.first {
-            infoLoader.loadAppInfo(appId: appId)
+        for appId in appIds {
+            let loader = AppInfoLoader(appId: appId)
+            loader.delegate = self
+            loader.loadAppInfo()
+            infoLoaders.append(loader)
+
+            items.append(AppListItem(appId: appId))
+        }
+
+        controller?.updateList(items)
+    }
+
+    func didFailLoading(_ appId: String, loader: AppInfoLoader ) {
+        //warning: show alert?
+
+        if let index = infoLoaders.index(where: { (loader) -> Bool in loader.appId == appId})  {
+            infoLoaders.remove(at: index)
         }
     }
 
-    func didFailLoading(_ appId: String) {
-        //warning: show alert?
-    }
-
-    func didLoadAppInfo(_ info: AppInfo) {
-        let items = [AppListItem(appInfo: info)]
-
+    func didLoadAppInfo(_ info: AppInfo, loader: AppInfoLoader, appId: String) {
+        if let index = infoLoaders.index(where: { (loader) -> Bool in loader.appId == appId})  {
+            infoLoaders.remove(at: index)
+        }
+        for item in items {
+            if item.appId == appId {
+                item.appInfo = info
+            }
+        }
         controller?.updateList(items)
     }
 

@@ -49,6 +49,7 @@
                 <constraint firstItem="HP6-WG-cGT" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="VPy-JI-DsY"/>
                 <constraint firstItem="9H6-pU-WUU" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="oFr-46-TnL"/>
                 <constraint firstItem="mEP-80-wV7" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="ogv-Pv-fb4"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HP6-WG-cGT" secondAttribute="trailing" constant="20" id="qiR-RU-fOE"/>
                 <constraint firstItem="mEP-80-wV7" firstAttribute="top" secondItem="HP6-WG-cGT" secondAttribute="bottom" constant="20" id="wPN-pT-vdp"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

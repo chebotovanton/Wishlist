@@ -1,10 +1,11 @@
 import UIKit
 
 class AppListItem: NSObject {
-    private let appInfo: AppInfo
+    var appInfo: AppInfo?
+    let appId: String
 
-    init(appInfo: AppInfo) {
-        self.appInfo = appInfo
+    init(appId: String) {
+        self.appId = appId
     }
 
     func cellHeight() -> CGFloat {

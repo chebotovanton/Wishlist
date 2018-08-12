@@ -56,5 +56,15 @@ class ListVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         return items[indexPath.item].cell(collectionView:collectionView, indexPath:indexPath)
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = items[indexPath.item]
+
+        if let appInfo = item.appInfo {
+            let detailsVC = AppDetailsVC(nibName: "AppDetailsVC", bundle: nil)
+            detailsVC.setup(appInfo)
+            navigationController?.pushViewController(detailsVC, animated: true)
+        }
+    }
+
 }
 

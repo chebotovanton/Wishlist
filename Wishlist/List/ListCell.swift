@@ -20,11 +20,22 @@ class ListCell: UICollectionViewCell {
         iconView?.clipsToBounds = true
     }
 
-    func setup(_ appInfo: AppInfo) {
-        titleLabel?.text = appInfo.name
-        descriptionLabel?.text = appInfo.description
+    func setup(_ appInfo: AppInfo?) {
+        if let appInfo = appInfo {
+            titleLabel?.text = appInfo.name
+            descriptionLabel?.text = appInfo.description
 
-        iconView?.sd_setImage(with: URL(string: appInfo.iconUrlString), completed: nil)
+            iconView?.sd_setImage(with: URL(string: appInfo.iconUrlString), completed: nil)
+        } else {
+            titleLabel?.text = "loading"
+        }
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        contentView.addGradient(startColor: UIColor(red: 255.0/255.0, green: 169.0/255.0, blue: 163.0/255.0, alpha: 1),
+                    endColor: UIColor(red: 194.0/255.0, green: 87.0/255.0, blue: 245.0/255.0, alpha: 1))
     }
 
 }
