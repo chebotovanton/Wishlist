@@ -1,4 +1,4 @@
-class AppsListPresenter: AppInfoLoaderDelegate {
+final class AppsListPresenter: AppInfoLoaderDelegate {
 
     var infoLoaders: [AppInfoLoader] = []
     var items: [AppListItem] = []
@@ -19,8 +19,7 @@ class AppsListPresenter: AppInfoLoaderDelegate {
     }
 
     func didFailLoading(_ appId: String, loader: AppInfoLoader ) {
-        //warning: show alert?
-
+        //warning: should we notify user?
         if let index = infoLoaders.index(where: { (loader) -> Bool in loader.appId == appId})  {
             infoLoaders.remove(at: index)
         }

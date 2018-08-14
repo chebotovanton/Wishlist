@@ -6,7 +6,7 @@ protocol AppInfoLoaderDelegate: class {
     func didFailLoading(_ appId: String, loader: AppInfoLoader)
 }
 
-class AppInfoLoader {
+final class AppInfoLoader {
 
     private let baseUrl = "https://itunes.apple.com/lookup?"
 

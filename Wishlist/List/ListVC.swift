@@ -1,7 +1,7 @@
 import UIKit
 import SDWebImage
 
-class ListVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet private weak var collectionView: UICollectionView?
     var items: [AppListItem] = []

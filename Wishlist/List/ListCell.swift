@@ -1,6 +1,6 @@
 import UIKit
 
-class ListCell: UICollectionViewCell {
+final class ListCell: UICollectionViewCell {
 
     @IBOutlet private weak var iconView: UIImageView?
     @IBOutlet private weak var titleLabel: UILabel?

@@ -1,6 +1,6 @@
 import UIKit
 
-class AppListItem: NSObject {
+final class AppListItem: NSObject {
     var appInfo: AppInfo?
     let appId: String
 
