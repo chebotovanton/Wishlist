@@ -12,10 +12,11 @@ final class AppsKeeper {
     static func addAppId(appId: String) {
         var array = getSavedAppIds()
         array.append(appId)
-        UserDefaults.standard.set(array, forKey: kAppsIdsKey)
+        userDefaults().set(array, forKey: kAppsIdsKey)
     }
 
     private static func userDefaults() -> UserDefaults {
         return UserDefaults(suiteName: "group.com.wishlist.group")!
     }
 }
+
