@@ -1,11 +1,12 @@
 import UIKit
 import SDWebImage
 
-final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CollectionSwipableCellExtensionDelegate {
 
     @IBOutlet private weak var collectionView: UICollectionView?
-    var items: [AppListItem] = []
-    let presenter = AppsListPresenter()
+    private var items: [AppListItem] = []
+    private let presenter = AppsListPresenter()
+    private var swipeExtension: CollectionSwipableCellExtension?
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -21,6 +22,12 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         collectionView?.setCollectionViewLayout(layout, animated: false)
         collectionView?.alwaysBounceVertical = true
+
+        if let collectionView = self.collectionView {
+            swipeExtension = CollectionSwipableCellExtension(with: collectionView)
+            swipeExtension?.delegate = self
+            swipeExtension?.isEnabled = true
+        }
 
         presenter.controller = self
         presenter.getAppsInfo()
@@ -65,6 +72,36 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
             navigationController?.pushViewController(detailsVC, animated: true)
         }
     }
+
+    // MARK: - CollectionSwipableCellExtensionDelegate
+
+    public func isSwipable(itemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    public func swipableActionsLayout(forItemAt indexPath: IndexPath) -> CollectionSwipableCellLayout? {
+
+        let layout = CollectionSwipableCellOneButtonLayout(buttonWidth: 100, insets: UIEdgeInsets.zero, direction: .leftToRight)
+        layout.button.setBackgroundImage(nil, for: .normal)
+        layout.button.setTitle(nil, for: .normal)
+        layout.button.setImage(UIImage(named: "remove"), for: .normal)
+        layout.button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        layout.button.backgroundColor = UIColor.clear
+        layout.button.tintColor = .red
+
+        layout.action = {[weak self] in
+            guard let `self` = self else { return }
+            guard indexPath.item < self.items.count else { return }
+
+            let item = self.items[indexPath.item]
+            AppsKeeper.removeAppId(appId: item.appId)
+            self.items.remove(at: indexPath.item)
+            self.collectionView?.deleteItems(at: [indexPath])
+        }
+
+        return layout
+    }
+
 
 }
 

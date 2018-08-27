@@ -21,6 +21,7 @@
 		9F2E704D211C904400441C1B /* AppsKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E704C211C904400441C1B /* AppsKeeper.swift */; };
 		9F2E704F211C911F00441C1B /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E704E211C911F00441C1B /* AppInfo.swift */; };
 		9F2E7051211C971200441C1B /* AppListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E7050211C971200441C1B /* AppListItem.swift */; };
+		9F5F6697213450FF00755F6A /* PasteboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F6696213450FF00755F6A /* PasteboardHandler.swift */; };
 		9F7EDA10211DE26100FFB014 /* AppDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7EDA0E211DE26100FFB014 /* AppDetailsVC.swift */; };
 		9F7EDA11211DE26100FFB014 /* AppDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F7EDA0F211DE26100FFB014 /* AppDetailsVC.xib */; };
 		9F7EDA13211DEAEB00FFB014 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F7EDA12211DEAEB00FFB014 /* Images.xcassets */; };
@@ -32,6 +33,15 @@
 		9F7EDA4E2121EF2600FFB014 /* AppIdExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7EDA4D2121EF2600FFB014 /* AppIdExtractor.swift */; };
 		9F7EDA4F2121EF2600FFB014 /* AppIdExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7EDA4D2121EF2600FFB014 /* AppIdExtractor.swift */; };
 		9F7EDA512121F10600FFB014 /* AppIdExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7EDA502121F10600FFB014 /* AppIdExtractorTests.swift */; };
+		9FF60FFC2128A1300012BF53 /* CollectionSwipableCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF60FF22128A1300012BF53 /* CollectionSwipableCellExtension.swift */; };
+		9FF60FFD2128A1300012BF53 /* UITableViewCell+CollectionSwipableCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF60FF32128A1300012BF53 /* UITableViewCell+CollectionSwipableCellExtension.swift */; };
+		9FF60FFE2128A1300012BF53 /* UICollectionViewCell+CollectionSwipableCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF60FF42128A1300012BF53 /* UICollectionViewCell+CollectionSwipableCellExtension.swift */; };
+		9FF60FFF2128A1300012BF53 /* CollectionSwipableCellOneButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF60FF52128A1300012BF53 /* CollectionSwipableCellOneButtonLayout.swift */; };
+		9FF610002128A1300012BF53 /* SwipableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF60FF72128A1300012BF53 /* SwipableCollection.swift */; };
+		9FF610012128A1300012BF53 /* SwipableUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF60FF82128A1300012BF53 /* SwipableUITableView.swift */; };
+		9FF610022128A1300012BF53 /* SwipableCellLayouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF60FF92128A1300012BF53 /* SwipableCellLayouter.swift */; };
+		9FF610032128A1300012BF53 /* SwipableUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF60FFA2128A1300012BF53 /* SwipableUICollectionView.swift */; };
+		9FF610042128A1300012BF53 /* CollectionSwipableCellHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF60FFB2128A1300012BF53 /* CollectionSwipableCellHandler.swift */; };
 		BE04A0B56455D80C54F05F7E /* Pods_Wishlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D167DF153ED084467829D149 /* Pods_Wishlist.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +106,7 @@
 		9F2E704C211C904400441C1B /* AppsKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsKeeper.swift; sourceTree = "<group>"; };
 		9F2E704E211C911F00441C1B /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		9F2E7050211C971200441C1B /* AppListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListItem.swift; sourceTree = "<group>"; };
+		9F5F6696213450FF00755F6A /* PasteboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardHandler.swift; sourceTree = "<group>"; };
 		9F7EDA0E211DE26100FFB014 /* AppDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsVC.swift; sourceTree = "<group>"; };
 		9F7EDA0F211DE26100FFB014 /* AppDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailsVC.xib; sourceTree = "<group>"; };
 		9F7EDA12211DEAEB00FFB014 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -108,6 +119,15 @@
 		9F7EDA4A2121DDB900FFB014 /* Wishlist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wishlist.entitlements; sourceTree = "<group>"; };
 		9F7EDA4D2121EF2600FFB014 /* AppIdExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIdExtractor.swift; sourceTree = "<group>"; };
 		9F7EDA502121F10600FFB014 /* AppIdExtractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIdExtractorTests.swift; sourceTree = "<group>"; };
+		9FF60FF22128A1300012BF53 /* CollectionSwipableCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSwipableCellExtension.swift; sourceTree = "<group>"; };
+		9FF60FF32128A1300012BF53 /* UITableViewCell+CollectionSwipableCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+CollectionSwipableCellExtension.swift"; sourceTree = "<group>"; };
+		9FF60FF42128A1300012BF53 /* UICollectionViewCell+CollectionSwipableCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+CollectionSwipableCellExtension.swift"; sourceTree = "<group>"; };
+		9FF60FF52128A1300012BF53 /* CollectionSwipableCellOneButtonLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSwipableCellOneButtonLayout.swift; sourceTree = "<group>"; };
+		9FF60FF72128A1300012BF53 /* SwipableCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipableCollection.swift; sourceTree = "<group>"; };
+		9FF60FF82128A1300012BF53 /* SwipableUITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipableUITableView.swift; sourceTree = "<group>"; };
+		9FF60FF92128A1300012BF53 /* SwipableCellLayouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipableCellLayouter.swift; sourceTree = "<group>"; };
+		9FF60FFA2128A1300012BF53 /* SwipableUICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipableUICollectionView.swift; sourceTree = "<group>"; };
+		9FF60FFB2128A1300012BF53 /* CollectionSwipableCellHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSwipableCellHandler.swift; sourceTree = "<group>"; };
 		D167DF153ED084467829D149 /* Pods_Wishlist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wishlist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -275,10 +295,36 @@
 		9F7EDA4C2121EF0600FFB014 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9FF60FF12128A1300012BF53 /* SwipableCell */,
 				9F2E704C211C904400441C1B /* AppsKeeper.swift */,
 				9F7EDA4D2121EF2600FFB014 /* AppIdExtractor.swift */,
+				9F5F6696213450FF00755F6A /* PasteboardHandler.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		9FF60FF12128A1300012BF53 /* SwipableCell */ = {
+			isa = PBXGroup;
+			children = (
+				9FF60FF22128A1300012BF53 /* CollectionSwipableCellExtension.swift */,
+				9FF60FF32128A1300012BF53 /* UITableViewCell+CollectionSwipableCellExtension.swift */,
+				9FF60FF42128A1300012BF53 /* UICollectionViewCell+CollectionSwipableCellExtension.swift */,
+				9FF60FF52128A1300012BF53 /* CollectionSwipableCellOneButtonLayout.swift */,
+				9FF60FF62128A1300012BF53 /* Private */,
+			);
+			path = SwipableCell;
+			sourceTree = "<group>";
+		};
+		9FF60FF62128A1300012BF53 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				9FF60FF72128A1300012BF53 /* SwipableCollection.swift */,
+				9FF60FF82128A1300012BF53 /* SwipableUITableView.swift */,
+				9FF60FF92128A1300012BF53 /* SwipableCellLayouter.swift */,
+				9FF60FFA2128A1300012BF53 /* SwipableUICollectionView.swift */,
+				9FF60FFB2128A1300012BF53 /* CollectionSwipableCellHandler.swift */,
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,15 +552,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F7EDA1B2120B0CB00FFB014 /* UIView+Gradient.swift in Sources */,
+				9FF60FFE2128A1300012BF53 /* UICollectionViewCell+CollectionSwipableCellExtension.swift in Sources */,
 				9F7EDA10211DE26100FFB014 /* AppDetailsVC.swift in Sources */,
 				9F2E7051211C971200441C1B /* AppListItem.swift in Sources */,
+				9FF610042128A1300012BF53 /* CollectionSwipableCellHandler.swift in Sources */,
 				9F16378F211C9BF30035A1AD /* AppsListPresenter.swift in Sources */,
+				9FF610032128A1300012BF53 /* SwipableUICollectionView.swift in Sources */,
+				9FF60FFF2128A1300012BF53 /* CollectionSwipableCellOneButtonLayout.swift in Sources */,
+				9FF610012128A1300012BF53 /* SwipableUITableView.swift in Sources */,
+				9FF60FFD2128A1300012BF53 /* UITableViewCell+CollectionSwipableCellExtension.swift in Sources */,
 				9F2E6F3421136D9800441C1B /* ListCell.swift in Sources */,
+				9FF610002128A1300012BF53 /* SwipableCollection.swift in Sources */,
+				9FF60FFC2128A1300012BF53 /* CollectionSwipableCellExtension.swift in Sources */,
 				9F2E6F0221136C6400441C1B /* AppDelegate.swift in Sources */,
+				9FF610022128A1300012BF53 /* SwipableCellLayouter.swift in Sources */,
 				9F2E704D211C904400441C1B /* AppsKeeper.swift in Sources */,
 				9F163791211CA0790035A1AD /* AppInfoResponse.swift in Sources */,
 				9F2E6F0421136C6400441C1B /* ListVC.swift in Sources */,
 				9F7EDA4E2121EF2600FFB014 /* AppIdExtractor.swift in Sources */,
+				9F5F6697213450FF00755F6A /* PasteboardHandler.swift in Sources */,
 				9F2E704B211C838600441C1B /* AppInfoLoader.swift in Sources */,
 				9F2E704F211C911F00441C1B /* AppInfo.swift in Sources */,
 			);

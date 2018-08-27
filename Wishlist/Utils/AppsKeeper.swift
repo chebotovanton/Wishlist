@@ -15,6 +15,18 @@ final class AppsKeeper {
         userDefaults().set(array, forKey: kAppsIdsKey)
     }
 
+    static func removeAppId(appId: String) {
+        var array = getSavedAppIds()
+        if let index = array.index(of: appId) {
+            array.remove(at: index)
+            userDefaults().set(array, forKey: kAppsIdsKey)
+        }
+    }
+
+    static func hasAppId(appId: String) -> Bool {
+        return getSavedAppIds().contains(appId)
+    }
+
     private static func userDefaults() -> UserDefaults {
         return UserDefaults(suiteName: "group.com.wishlist.group")!
     }
