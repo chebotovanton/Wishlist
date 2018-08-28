@@ -1,8 +1,20 @@
+import UIKit
+
 final class AppsListPresenter: AppInfoLoaderDelegate {
 
     var infoLoaders: [AppInfoLoader] = []
     var items: [AppListItem] = []
     weak var controller: ListVC?
+
+    init() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData),
+                                               name: NSNotification.Name(rawValue: PasteboardHandler.notificationName),
+                                               object: nil)
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
     func getAppsInfo() {
         let appIds = AppsKeeper.getSavedAppIds()
@@ -34,6 +46,11 @@ final class AppsListPresenter: AppInfoLoaderDelegate {
                 item.appInfo = info
             }
         }
+        controller?.updateList(items)
+    }
+
+    @objc private func reloadData() {
+        //what to do here?
         controller?.updateList(items)
     }
 

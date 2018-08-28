@@ -11,6 +11,8 @@ class AppDetailsVC: UIViewController {
     //replace with stars view
     @IBOutlet private weak var ratingLabel: UILabel?
 
+    @IBOutlet private weak var appStoreBackground: UIView?
+
     func setup(_ appInfo: AppInfo) {
         self.appInfo = appInfo
 
@@ -24,6 +26,9 @@ class AppDetailsVC: UIViewController {
         iconView?.layer.cornerRadius = 18
         iconView?.clipsToBounds = true
 
+        appStoreBackground?.layer.cornerRadius = 12
+        appStoreBackground?.clipsToBounds = true
+
         if let appInfo = self.appInfo {
             setup(info: appInfo)
         }
@@ -33,8 +38,7 @@ class AppDetailsVC: UIViewController {
         titleLabel?.text = info.name
         descriptionLabel?.text = info.description
 
-        //move this to some string formatter?
-        priceLabel?.text = info.price > 0 ? String(info.price) + info.currency : "Free"
+        priceLabel?.text = info.formattedPrice
         ratingLabel?.text = String(info.rating)
         iconView?.sd_setImage(with: URL(string: info.iconUrlString), completed: nil)
     }

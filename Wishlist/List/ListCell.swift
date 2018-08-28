@@ -25,8 +25,7 @@ final class ListCell: UICollectionViewCell {
         if let appInfo = appInfo {
             titleLabel?.text = appInfo.name
             descriptionLabel?.text = appInfo.description
-            //move this to some string formatter?
-            priceLabel?.text = appInfo.price > 0 ? String(appInfo.price) + appInfo.currency : "Free"
+            priceLabel?.text = appInfo.formattedPrice
             ratingLabel?.text = String(appInfo.rating) 
 
             iconView?.sd_setImage(with: URL(string: appInfo.iconUrlString), completed: nil)

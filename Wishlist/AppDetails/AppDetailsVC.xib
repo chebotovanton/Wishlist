@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppDetailsVC" customModule="Wishlist" customModuleProvider="target">
             <connections>
+                <outlet property="appStoreBackground" destination="x4q-i7-9hv" id="HKZ-GC-k4B"/>
                 <outlet property="descriptionLabel" destination="56i-Kn-ETg" id="IpF-sa-i10"/>
                 <outlet property="iconView" destination="Ctn-FM-iRI" id="VoE-HT-eCX"/>
                 <outlet property="priceLabel" destination="Uo7-No-2eh" id="Xrf-D2-Zcb"/>
@@ -84,7 +85,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="aqU-GY-uSD" secondAttribute="bottom" constant="270" id="6Ab-KX-s8Q"/>
+                        <constraint firstAttribute="bottom" secondItem="aqU-GY-uSD" secondAttribute="bottom" constant="50" id="6Ab-KX-s8Q"/>
                         <constraint firstItem="aqU-GY-uSD" firstAttribute="leading" secondItem="9iu-Re-alT" secondAttribute="leading" id="7ij-iW-kV4"/>
                         <constraint firstItem="aqU-GY-uSD" firstAttribute="width" secondItem="9iu-Re-alT" secondAttribute="width" id="HCw-Rd-tTu"/>
                         <constraint firstAttribute="trailing" secondItem="aqU-GY-uSD" secondAttribute="trailing" id="XZb-s6-ODT"/>
@@ -92,6 +93,34 @@
                         <constraint firstAttribute="width" constant="375" id="yrL-XU-apI"/>
                     </constraints>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4q-i7-9hv">
+                    <rect key="frame" x="12" y="600" width="351" height="55"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appstore" translatesAutoresizingMaskIntoConstraints="NO" id="Je7-7J-MUM">
+                            <rect key="frame" x="20" y="14.5" width="26" height="26"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="USo-SQ-6kU">
+                            <rect key="frame" x="321" y="18.5" width="10" height="18"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SID-xa-l5n">
+                            <rect key="frame" x="56" y="19" width="68.5" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="USo-SQ-6kU" firstAttribute="centerY" secondItem="x4q-i7-9hv" secondAttribute="centerY" id="8MU-G1-Ln8"/>
+                        <constraint firstAttribute="height" constant="55" id="QgB-x6-r29"/>
+                        <constraint firstItem="Je7-7J-MUM" firstAttribute="centerY" secondItem="x4q-i7-9hv" secondAttribute="centerY" id="Ul9-Db-TQa"/>
+                        <constraint firstItem="USo-SQ-6kU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SID-xa-l5n" secondAttribute="trailing" constant="10" id="Wc8-Uy-00P"/>
+                        <constraint firstItem="SID-xa-l5n" firstAttribute="centerY" secondItem="Je7-7J-MUM" secondAttribute="centerY" id="eiB-69-6uG"/>
+                        <constraint firstAttribute="trailing" secondItem="USo-SQ-6kU" secondAttribute="trailing" constant="20" id="iYs-8T-QVS"/>
+                        <constraint firstItem="Je7-7J-MUM" firstAttribute="leading" secondItem="x4q-i7-9hv" secondAttribute="leading" constant="20" id="m24-fQ-H9v"/>
+                        <constraint firstItem="SID-xa-l5n" firstAttribute="leading" secondItem="Je7-7J-MUM" secondAttribute="trailing" constant="10" id="qht-Bc-fqm"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8h-J2-yge">
                     <rect key="frame" x="326" y="40" width="29" height="29"/>
                     <state key="normal" image="closeButton"/>
@@ -103,16 +132,21 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="9iu-Re-alT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CG3-D2-dxb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="x4q-i7-9hv" secondAttribute="bottom" constant="12" id="JBK-pb-3j0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9iu-Re-alT" secondAttribute="trailing" id="LEb-rm-Xqu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9iu-Re-alT" secondAttribute="bottom" id="NhY-UU-m6W"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x4q-i7-9hv" secondAttribute="trailing" constant="12" id="S42-yO-c9J"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V8h-J2-yge" secondAttribute="trailing" constant="20" id="a5K-xk-N20"/>
                 <constraint firstItem="V8h-J2-yge" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="kdu-Ms-5og"/>
+                <constraint firstItem="x4q-i7-9hv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="oLe-Ck-6TO"/>
                 <constraint firstItem="9iu-Re-alT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sfE-ox-v1V"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
     <resources>
+        <image name="appstore" width="26" height="26"/>
+        <image name="arrow" width="10" height="18"/>
         <image name="closeButton" width="29" height="29"/>
     </resources>
 </document>
