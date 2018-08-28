@@ -6,6 +6,11 @@ class AppDetailsVC: UIViewController {
     @IBOutlet private weak var titleLabel: UILabel?
     @IBOutlet private weak var descriptionLabel: UILabel?
 
+    @IBOutlet private weak var iconView: UIImageView?
+    @IBOutlet private weak var priceLabel: UILabel?
+    //replace with stars view
+    @IBOutlet private weak var ratingLabel: UILabel?
+
     func setup(_ appInfo: AppInfo) {
         self.appInfo = appInfo
 
@@ -16,8 +21,22 @@ class AppDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        titleLabel?.text = appInfo?.name
-        descriptionLabel?.text = appInfo?.description
+        iconView?.layer.cornerRadius = 18
+        iconView?.clipsToBounds = true
+
+        if let appInfo = self.appInfo {
+            setup(info: appInfo)
+        }
+    }
+
+    private func setup(info: AppInfo) {
+        titleLabel?.text = info.name
+        descriptionLabel?.text = info.description
+
+        //move this to some string formatter?
+        priceLabel?.text = info.price > 0 ? String(info.price) + info.currency : "Free"
+        ratingLabel?.text = String(info.rating)
+        iconView?.sd_setImage(with: URL(string: info.iconUrlString), completed: nil)
     }
 
     override func viewDidLayoutSubviews() {

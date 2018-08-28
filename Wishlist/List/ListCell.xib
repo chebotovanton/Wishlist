@@ -27,15 +27,27 @@
                             <constraint firstAttribute="width" constant="100" id="zRL-iX-5yT"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HP6-WG-cGT">
-                        <rect key="frame" x="20" y="140" width="64" height="29"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HP6-WG-cGT">
+                        <rect key="frame" x="20" y="140" width="120" height="29"/>
                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEP-80-wV7">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="399 Р" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h19-zI-K5r">
+                        <rect key="frame" x="140" y="45" width="47" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEP-80-wV7">
                         <rect key="frame" x="20" y="189" width="261" height="16"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5 ★★★★★" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nD-v9-j2r">
+                        <rect key="frame" x="140" y="66" width="92" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -44,10 +56,16 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="9H6-pU-WUU" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="20" id="1rH-vS-Gdj"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5nD-v9-j2r" secondAttribute="trailing" constant="10" id="I5e-Cg-OCu"/>
+                <constraint firstItem="h19-zI-K5r" firstAttribute="leading" secondItem="9H6-pU-WUU" secondAttribute="trailing" constant="20" id="JrI-Mf-0t8"/>
                 <constraint firstItem="HP6-WG-cGT" firstAttribute="top" secondItem="9H6-pU-WUU" secondAttribute="bottom" constant="20" id="L2c-2F-srV"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="mEP-80-wV7" secondAttribute="trailing" constant="20" id="LAk-0p-4oE"/>
+                <constraint firstItem="5nD-v9-j2r" firstAttribute="top" secondItem="h19-zI-K5r" secondAttribute="bottom" id="PFp-Dn-TI2"/>
+                <constraint firstItem="h19-zI-K5r" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="45" id="PMJ-ot-zKf"/>
+                <constraint firstItem="5nD-v9-j2r" firstAttribute="leading" secondItem="h19-zI-K5r" secondAttribute="leading" id="Rxg-Ln-vj6"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mEP-80-wV7" secondAttribute="bottom" constant="20" id="UG5-MW-4QU"/>
                 <constraint firstItem="HP6-WG-cGT" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="VPy-JI-DsY"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="h19-zI-K5r" secondAttribute="trailing" constant="10" id="kdg-jI-N8E"/>
                 <constraint firstItem="9H6-pU-WUU" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="oFr-46-TnL"/>
                 <constraint firstItem="mEP-80-wV7" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="ogv-Pv-fb4"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HP6-WG-cGT" secondAttribute="trailing" constant="20" id="qiR-RU-fOE"/>
@@ -58,6 +76,8 @@
             <connections>
                 <outlet property="descriptionLabel" destination="mEP-80-wV7" id="d2C-GQ-76m"/>
                 <outlet property="iconView" destination="9H6-pU-WUU" id="UpE-0a-Vrd"/>
+                <outlet property="priceLabel" destination="h19-zI-K5r" id="ULr-Qh-NzO"/>
+                <outlet property="ratingLabel" destination="5nD-v9-j2r" id="Z8h-Ib-SYA"/>
                 <outlet property="titleLabel" destination="HP6-WG-cGT" id="tWy-wH-GHh"/>
             </connections>
             <point key="canvasLocation" x="-91.5" y="157"/>

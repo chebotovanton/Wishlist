@@ -19,7 +19,6 @@ class PasteboardHandler {
 
     static func getPasteboardId() -> String? {
         for string in UIPasteboard.general.strings ?? [] {
-            NSLog(string)
             if let appId = AppIdExtractor.appIdFrom(urlString: string), !AppsKeeper.hasAppId(appId: appId) {
                 return appId
             }

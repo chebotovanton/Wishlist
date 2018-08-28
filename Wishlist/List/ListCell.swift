@@ -5,6 +5,9 @@ final class ListCell: UICollectionViewCell {
     @IBOutlet private weak var iconView: UIImageView?
     @IBOutlet private weak var titleLabel: UILabel?
     @IBOutlet private weak var descriptionLabel: UILabel?
+    @IBOutlet private weak var priceLabel: UILabel?
+    //replace with stars view
+    @IBOutlet private weak var ratingLabel: UILabel?
 
     static func reuseIdentifier() -> String {
         return "ListCell"
@@ -22,6 +25,9 @@ final class ListCell: UICollectionViewCell {
         if let appInfo = appInfo {
             titleLabel?.text = appInfo.name
             descriptionLabel?.text = appInfo.description
+            //move this to some string formatter?
+            priceLabel?.text = appInfo.price > 0 ? String(appInfo.price) + appInfo.currency : "Free"
+            ratingLabel?.text = String(appInfo.rating) 
 
             iconView?.sd_setImage(with: URL(string: appInfo.iconUrlString), completed: nil)
         } else {
