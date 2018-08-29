@@ -6,6 +6,7 @@ struct AppInfo: ImmutableMappable {
     let description: String
     let rating: Float
     let formattedPrice: String
+    var appId: String?
 
     init(map: Map) throws {
         name = try map.value("trackName")

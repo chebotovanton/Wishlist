@@ -108,11 +108,21 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOr-H7-dw7">
+                            <rect key="frame" x="0.0" y="0.0" width="351" height="55"/>
+                            <connections>
+                                <action selector="openAppStore" destination="-1" eventType="touchUpInside" id="1Gj-Du-fg9"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="bOr-H7-dw7" firstAttribute="leading" secondItem="x4q-i7-9hv" secondAttribute="leading" id="2Pe-ig-1cv"/>
                         <constraint firstItem="USo-SQ-6kU" firstAttribute="centerY" secondItem="x4q-i7-9hv" secondAttribute="centerY" id="8MU-G1-Ln8"/>
+                        <constraint firstAttribute="bottom" secondItem="bOr-H7-dw7" secondAttribute="bottom" id="MBy-IQ-gid"/>
+                        <constraint firstAttribute="trailing" secondItem="bOr-H7-dw7" secondAttribute="trailing" id="Mk8-F7-Tng"/>
                         <constraint firstAttribute="height" constant="55" id="QgB-x6-r29"/>
+                        <constraint firstItem="bOr-H7-dw7" firstAttribute="top" secondItem="x4q-i7-9hv" secondAttribute="top" id="UcA-hO-aZP"/>
                         <constraint firstItem="Je7-7J-MUM" firstAttribute="centerY" secondItem="x4q-i7-9hv" secondAttribute="centerY" id="Ul9-Db-TQa"/>
                         <constraint firstItem="USo-SQ-6kU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SID-xa-l5n" secondAttribute="trailing" constant="10" id="Wc8-Uy-00P"/>
                         <constraint firstItem="SID-xa-l5n" firstAttribute="centerY" secondItem="Je7-7J-MUM" secondAttribute="centerY" id="eiB-69-6uG"/>

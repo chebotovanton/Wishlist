@@ -1,6 +1,7 @@
 import UIKit
+import StoreKit
 
-class AppDetailsVC: UIViewController {
+class AppDetailsVC: UIViewController, SKStoreProductViewControllerDelegate {
 
     private var appInfo: AppInfo?
     @IBOutlet private weak var titleLabel: UILabel?
@@ -52,4 +53,25 @@ class AppDetailsVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
+    @IBAction private func openAppStore() {
+        if let appId = appInfo?.appId {
+            openStoreProduct(appStoreId: appId)
+        }
+    }
+
+    private func openStoreProduct(appStoreId: String) {
+        let storeViewController = SKStoreProductViewController()
+        storeViewController.delegate = self
+
+        let parameters = [ SKStoreProductParameterITunesItemIdentifier : appStoreId]
+        storeViewController.loadProduct(withParameters: parameters) { [weak self] (loaded, error) -> Void in
+            if loaded {
+                self?.present(storeViewController, animated: true, completion: nil)
+            }
+        }
+    }
+
+    func productViewControllerDidFinish(_ viewController: SKStoreProductViewController) {
+        viewController.dismiss(animated: true, completion: nil)
+    }
 }

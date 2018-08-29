@@ -18,13 +18,14 @@ final class AppInfoLoader {
     }
 
     func loadAppInfo() {
+        //warning: that's ugly. Add appId to appInfo in a proper manner
         let params = ["id" : appId]
         Alamofire.request(baseUrl, parameters:params).responseObject { [weak self] (response: DataResponse<AppInfoResponse>) in
-            guard let info = response.result.value?.info.first else {
+            guard var info = response.result.value?.info.first else {
                 self?.delegate?.didFailLoading(self!.appId, loader: self!)
                 return
             }
-
+            info.appId = self?.appId
             self?.delegate?.didLoadAppInfo(info, loader: self!, appId: self!.appId)
         }
     }
