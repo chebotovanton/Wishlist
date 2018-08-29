@@ -2,6 +2,7 @@ import UIKit
 
 final class ListCell: UICollectionViewCell {
 
+    @IBOutlet private weak var gradientView: GradientView?
     @IBOutlet private weak var iconView: UIImageView?
     @IBOutlet private weak var titleLabel: UILabel?
     @IBOutlet private weak var descriptionLabel: UILabel?
@@ -16,7 +17,8 @@ final class ListCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        layer.cornerRadius = 18
+        gradientView?.layer.cornerRadius = 18
+        gradientView?.clipsToBounds = true
         iconView?.layer.cornerRadius = 18
         iconView?.clipsToBounds = true
     }
@@ -33,12 +35,4 @@ final class ListCell: UICollectionViewCell {
             titleLabel?.text = "loading"
         }
     }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        contentView.addGradient(startColor: UIColor(red: 255.0/255.0, green: 169.0/255.0, blue: 163.0/255.0, alpha: 1),
-                    endColor: UIColor(red: 194.0/255.0, green: 87.0/255.0, blue: 245.0/255.0, alpha: 1))
-    }
-
 }
