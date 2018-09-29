@@ -4,6 +4,8 @@ import SDWebImage
 final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CollectionSwipableCellExtensionDelegate {
 
     @IBOutlet private weak var collectionView: UICollectionView?
+    @IBOutlet private weak var topGradient: GradientView?
+
     private var items: [AppListItem] = []
     private let presenter = AppsListPresenter()
     private var swipeExtension: CollectionSwipableCellExtension?
@@ -14,6 +16,13 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
+        topGradient?.startPoint = CGPoint(x: 0, y: 0)
+        topGradient?.endPoint = CGPoint(x: 0, y: 1)
+        topGradient?.firstColor = UIColor.black.withAlphaComponent(1).cgColor
+        topGradient?.secondColor = UIColor.clear.cgColor
+        topGradient?.setupView()
 
         collectionView?.register(UINib(nibName: "ListCell", bundle: nil), forCellWithReuseIdentifier: ListCell.reuseIdentifier())
 
@@ -40,6 +49,10 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
     }
 
     // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 20)
+    }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -101,7 +114,6 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
 
         return layout
     }
-
 
 }
 

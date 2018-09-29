@@ -33,6 +33,7 @@
 		9F7EDA4E2121EF2600FFB014 /* AppIdExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7EDA4D2121EF2600FFB014 /* AppIdExtractor.swift */; };
 		9F7EDA4F2121EF2600FFB014 /* AppIdExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7EDA4D2121EF2600FFB014 /* AppIdExtractor.swift */; };
 		9F7EDA512121F10600FFB014 /* AppIdExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7EDA502121F10600FFB014 /* AppIdExtractorTests.swift */; };
+		9FB81B7B215FAAEF00E9DD1B /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81B7A215FAAEF00E9DD1B /* StarsView.swift */; };
 		9FF60FFC2128A1300012BF53 /* CollectionSwipableCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF60FF22128A1300012BF53 /* CollectionSwipableCellExtension.swift */; };
 		9FF60FFD2128A1300012BF53 /* UITableViewCell+CollectionSwipableCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF60FF32128A1300012BF53 /* UITableViewCell+CollectionSwipableCellExtension.swift */; };
 		9FF60FFE2128A1300012BF53 /* UICollectionViewCell+CollectionSwipableCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF60FF42128A1300012BF53 /* UICollectionViewCell+CollectionSwipableCellExtension.swift */; };
@@ -119,6 +120,7 @@
 		9F7EDA4A2121DDB900FFB014 /* Wishlist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wishlist.entitlements; sourceTree = "<group>"; };
 		9F7EDA4D2121EF2600FFB014 /* AppIdExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIdExtractor.swift; sourceTree = "<group>"; };
 		9F7EDA502121F10600FFB014 /* AppIdExtractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIdExtractorTests.swift; sourceTree = "<group>"; };
+		9FB81B7A215FAAEF00E9DD1B /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 		9FF60FF22128A1300012BF53 /* CollectionSwipableCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSwipableCellExtension.swift; sourceTree = "<group>"; };
 		9FF60FF32128A1300012BF53 /* UITableViewCell+CollectionSwipableCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+CollectionSwipableCellExtension.swift"; sourceTree = "<group>"; };
 		9FF60FF42128A1300012BF53 /* UICollectionViewCell+CollectionSwipableCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+CollectionSwipableCellExtension.swift"; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				9F5CE12D2137230500F9B340 /* GradientView.swift */,
+				9FB81B7A215FAAEF00E9DD1B /* StarsView.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				9FF610002128A1300012BF53 /* SwipableCollection.swift in Sources */,
 				9FF60FFC2128A1300012BF53 /* CollectionSwipableCellExtension.swift in Sources */,
 				9F2E6F0221136C6400441C1B /* AppDelegate.swift in Sources */,
+				9FB81B7B215FAAEF00E9DD1B /* StarsView.swift in Sources */,
 				9FF610022128A1300012BF53 /* SwipableCellLayouter.swift in Sources */,
 				9F2E704D211C904400441C1B /* AppsKeeper.swift in Sources */,
 				9F163791211CA0790035A1AD /* AppInfoResponse.swift in Sources */,

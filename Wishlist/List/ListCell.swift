@@ -7,8 +7,8 @@ final class ListCell: UICollectionViewCell {
     @IBOutlet private weak var titleLabel: UILabel?
     @IBOutlet private weak var descriptionLabel: UILabel?
     @IBOutlet private weak var priceLabel: UILabel?
-    //replace with stars view
     @IBOutlet private weak var ratingLabel: UILabel?
+    @IBOutlet private weak var starsView: StarsView?
 
     static func reuseIdentifier() -> String {
         return "ListCell"
@@ -28,7 +28,8 @@ final class ListCell: UICollectionViewCell {
             titleLabel?.text = appInfo.name
             descriptionLabel?.text = appInfo.description
             priceLabel?.text = appInfo.formattedPrice
-            ratingLabel?.text = String(appInfo.rating) 
+            ratingLabel?.text = String(appInfo.rating)
+            starsView?.setup(rating: appInfo.rating)
 
             iconView?.sd_setImage(with: URL(string: appInfo.iconUrlString), completed: nil)
         } else {

@@ -9,7 +9,6 @@ class AppDetailsVC: UIViewController, SKStoreProductViewControllerDelegate {
 
     @IBOutlet private weak var iconView: UIImageView?
     @IBOutlet private weak var priceLabel: UILabel?
-    //replace with stars view
     @IBOutlet private weak var ratingLabel: UILabel?
 
     @IBOutlet private weak var appStoreBackground: UIView?
@@ -42,11 +41,6 @@ class AppDetailsVC: UIViewController, SKStoreProductViewControllerDelegate {
         priceLabel?.text = info.formattedPrice
         ratingLabel?.text = String(info.rating)
         iconView?.sd_setImage(with: URL(string: info.iconUrlString), completed: nil)
-    }
-
-    override func viewDidLayoutSubviews() {
-        view.addGradient(startColor: UIColor(red: 240.0/255.0, green: 147.0/255.0, blue: 251.0/255.0, alpha: 1),
-                         endColor: UIColor(red: 245.0/255.0, green: 87.0/255.0, blue: 108.0/255.0, alpha: 1))
     }
 
     @IBAction private func goBack() {
