@@ -62,6 +62,9 @@
                                 <state key="normal" title="About">
                                     <color key="titleColor" red="0.85882352941176465" green="0.23921568627450979" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="showAboutPage" destination="9pv-A4-QxB" eventType="touchUpInside" id="g2t-Vj-7lY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TzD-fE-WqS">
                                 <rect key="frame" x="316" y="30" width="39" height="36"/>

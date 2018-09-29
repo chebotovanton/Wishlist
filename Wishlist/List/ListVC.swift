@@ -47,6 +47,12 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
         collectionView?.reloadData()
     }
 
+    @IBAction private func showAboutPage() {
+        let aboutVC = AboutVC(nibName: "AboutVC", bundle: nil)
+        aboutVC.modalPresentationStyle = .overCurrentContext
+        present(aboutVC, animated: true, completion: nil)
+    }
+
     // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
