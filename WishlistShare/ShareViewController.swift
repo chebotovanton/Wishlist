@@ -10,16 +10,17 @@ class ShareViewController: SLComposeServiceViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let extensionItem = extensionContext?.inputItems[0] as! NSExtensionItem
+        guard let extensionItem = extensionContext?.inputItems[0] as? NSExtensionItem else { return }
         let contentTypeURL = kUTTypeURL as String
         let contentTypeText = kUTTypeText as String
-        let attachments = extensionItem.attachments as! [NSItemProvider]
+        guard let attachments = extensionItem.attachments as? [NSItemProvider] else { return }
 
         for attachment in attachments {
             if attachment.hasItemConformingToTypeIdentifier(contentTypeURL) {
                 attachment.loadItem(forTypeIdentifier: contentTypeURL, options: nil, completionHandler: { (results, error) in
-                    let url = results as! URL?
-                    self.urlString = url!.absoluteString
+                    if let url = results as? URL {
+                        self.urlString = url.absoluteString
+                    }
                 })
             }
             if attachment.hasItemConformingToTypeIdentifier(contentTypeText) {
@@ -31,10 +32,10 @@ class ShareViewController: SLComposeServiceViewController {
     }
 
     override func isContentValid() -> Bool {
-        if let url = urlString, let _ = AppIdExtractor.appIdFrom(urlString: url) {
+        if let url = urlString, AppIdExtractor.appIdFrom(urlString: url) != nil {
             return true
         }
-        if let text = textString, let _ = AppIdExtractor.appIdFrom(urlString: text) {
+        if let text = textString, AppIdExtractor.appIdFrom(urlString: text) != nil {
             return true
         }
         return false

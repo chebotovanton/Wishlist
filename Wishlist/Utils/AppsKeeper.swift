@@ -31,4 +31,3 @@ final class AppsKeeper {
         return UserDefaults(suiteName: "group.com.wishlist.group")!
     }
 }
-

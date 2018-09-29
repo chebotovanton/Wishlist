@@ -32,19 +32,18 @@ final class AppsListPresenter: AppInfoLoaderDelegate {
 
     func didFailLoading(_ appId: String, loader: AppInfoLoader ) {
         //warning: should we notify user?
-        if let index = infoLoaders.index(where: { (loader) -> Bool in loader.appId == appId})  {
+        if let index = infoLoaders.index(where: { (loader) -> Bool in loader.appId == appId}) {
             infoLoaders.remove(at: index)
         }
     }
 
     func didLoadAppInfo(_ info: AppInfo, loader: AppInfoLoader, appId: String) {
-        if let index = infoLoaders.index(where: { (loader) -> Bool in loader.appId == appId})  {
+        if let index = infoLoaders.index(where: { (loader) -> Bool in loader.appId == appId}) {
             infoLoaders.remove(at: index)
         }
-        for item in items {
-            if item.appId == appId {
-                item.appInfo = info
-            }
+        for item in items where item.appId == appId {
+            item.appInfo = info
+            break
         }
         controller?.updateList(items)
     }

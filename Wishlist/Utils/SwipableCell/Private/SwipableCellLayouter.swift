@@ -36,7 +36,6 @@ class SwipableCellLayouter {
     private var offsetCollector = OffsetCollector()
 
     private var hapticGeneratorObject: Any?
-    @available(iOS 10.0, *)
     private var hapticGenerator: UIImpactFeedbackGenerator? {
         guard layout?.hapticFeedbackIsEnabled() == true else {
             return nil
@@ -57,30 +56,15 @@ class SwipableCellLayouter {
 
     private var cellTranslationX: CGFloat {
         get {
-            if #available(iOS 9, *) {
-                return item.contentView.frame.origin.x
-            } else {
-                return item.contentView.transform.tx
-            }
+            return item.contentView.frame.origin.x
         }
         set {
-            if #available(iOS 9, *) {
-                item.contentView.frame.origin.x = newValue
-                item.linkedViews.forEach {
-                    $0.frame.origin.x = newValue
-                }
-            } else {
-                let transform = CGAffineTransform(translationX: newValue, y: 0)
-                item.contentView.transform = transform
-                item.linkedViews.forEach {
-                    $0.transform = transform
-                }
-            }
+            item.contentView.frame.origin.x = newValue
+            item.linkedViews.forEach { $0.frame.origin.x = newValue }
         }
     }
 
     private let direction: UIUserInterfaceLayoutDirection
-
     private var contentViewObservation: NSKeyValueObservation?
     private var prevContentViewOrigin: CGPoint = CGPoint.zero
 
@@ -123,15 +107,12 @@ class SwipableCellLayouter {
         }
     }
 
-    func swipe(x: CGFloat) {
+    func swipe(deltaX: CGFloat) {
         if swipeIsFinished {
             originSwipePosition = swipePosition
-
-            if #available(iOS 10.0, *) {
-                hapticGenerator?.prepare()
-            }
+            hapticGenerator?.prepare()
         }
-        swipePosition = originSwipePosition + x * directionFactor;
+        swipePosition = originSwipePosition + deltaX * directionFactor
         swipeIsFinished = false
     }
 
@@ -222,9 +203,7 @@ class SwipableCellLayouter {
         previousSector = sector
 
         if offsetValue.animated {
-            if #available(iOS 10.0, *) {
-                hapticGenerator?.impactOccurred()
-            }
+            hapticGenerator?.impactOccurred()
             UIView.animate(withDuration: 0.2, animations: {
                 self.cellTranslationX = offsetValue.value
                 self.layoutActions()
@@ -350,7 +329,7 @@ class SwipableCellLayouter {
                     animationBlock(frameInfo.value)
                 })
 
-                frameStart = frameStart + frameInfo.duration
+                frameStart += frameInfo.duration
             }
         }) { (finished) in
             completion?()
@@ -368,8 +347,8 @@ class SwipableCellLayouter {
 }
 
 private func easeOut(value: CGFloat, startValue: CGFloat, endValue: CGFloat, asymptote: CGFloat) -> CGFloat {
-    let t = (value - startValue) / (endValue - startValue) //to 0...1
-    let easeResult = t * (2 - t) //quad ease out
+    let normalized = (value - startValue) / (endValue - startValue) //to 0...1
+    let easeResult = normalized * (2 - normalized) //quad ease out
 
     let normalizedAsymptote = asymptote - startValue
 
@@ -400,5 +379,4 @@ private class OffsetCollector {
     func offset(for type: FinishAnimationType) -> CGFloat {
         return self.type == type ? self.offset : 0
     }
-
 }

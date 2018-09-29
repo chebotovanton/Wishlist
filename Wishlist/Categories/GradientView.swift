@@ -21,7 +21,7 @@ final class GradientView: UIView {
         autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
         guard let theLayer = self.layer as? CAGradientLayer else {
-            return;
+            return
         }
 
         theLayer.colors = [firstColor,

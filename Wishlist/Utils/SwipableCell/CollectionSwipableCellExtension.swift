@@ -134,7 +134,7 @@ public class CollectionSwipableCellExtension: NSObject {
 
     private class AnchorView: UIView {
 
-        var emptyWindowHandler: (() -> (Void))?
+        var emptyWindowHandler: (() -> Void)?
 
         override func willMove(toWindow newWindow: UIWindow?) {
             super.willMove(toWindow: newWindow)

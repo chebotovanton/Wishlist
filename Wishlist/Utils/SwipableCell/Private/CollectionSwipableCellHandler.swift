@@ -91,7 +91,7 @@ class CollectionSwipableCellHandler: NSObject {
 
             let translation = recognizer.translation(in: layouterInProgress.item.view)
 
-            layouterInProgress.swipe(x: translation.x)
+            layouterInProgress.swipe(deltaX: translation.x)
         case .ended:
             guard let layouterInProgress = layouterInProgress else {
                 return
@@ -124,7 +124,7 @@ extension CollectionSwipableCellHandler: UIGestureRecognizerDelegate {
         if let gestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer {
             let velocity = gestureRecognizer.velocity(in: collection.view)
 
-            if abs(velocity.y) > abs(velocity.x)  {
+            if abs(velocity.y) > abs(velocity.x) {
                 // vertical scrolling, hide active cell if any
                 closeCellInProgress()
 

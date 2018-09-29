@@ -17,7 +17,6 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
         topGradient?.startPoint = CGPoint(x: 0, y: 0)
         topGradient?.endPoint = CGPoint(x: 0, y: 1)
         topGradient?.firstColor = UIColor.black.withAlphaComponent(1).cgColor
@@ -116,4 +115,3 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
     }
 
 }
-

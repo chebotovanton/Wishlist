@@ -13,7 +13,9 @@ private var kSwipableHandlerAssociatedKey = "swipableHandler"
 public extension UICollectionViewCell {
 
     /**
-     * Call this method in collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) of UICollectionViewDelegate of UITableViewDelegate
+     * Call this method in
+     * collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
+     * of UICollectionViewDelegate of UITableViewDelegate
      **/
     @objc public func resetSwipableActions() {
         swipableHandlerWrapper?.handler?.removeCurrentLayouterBeforeCellReusing()
