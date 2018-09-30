@@ -8,7 +8,7 @@ final class AppsListPresenter: AppInfoLoaderDelegate {
 
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData),
-                                               name: NSNotification.Name(rawValue: PasteboardHandler.notificationName),
+                                               name: NSNotification.Name(rawValue: NewAppVC.notificationName),
                                                object: nil)
     }
 
@@ -31,7 +31,7 @@ final class AppsListPresenter: AppInfoLoaderDelegate {
     }
 
     func didFailLoading(_ appId: String, loader: AppInfoLoader ) {
-        //warning: should we notify user?
+        //TODO: should we notify user?
         if let index = infoLoaders.index(where: { (loader) -> Bool in loader.appId == appId}) {
             infoLoaders.remove(at: index)
         }
@@ -49,8 +49,8 @@ final class AppsListPresenter: AppInfoLoaderDelegate {
     }
 
     @objc private func reloadData() {
-        //what to do here?
-        controller?.updateList(items)
+        //TODO: what to do here?
+        getAppsInfo()
     }
 
 }

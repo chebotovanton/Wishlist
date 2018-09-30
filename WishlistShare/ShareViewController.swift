@@ -32,6 +32,7 @@ class ShareViewController: SLComposeServiceViewController {
     }
 
     override func isContentValid() -> Bool {
+        //TODO: What's going on here?
         if let url = urlString, AppIdExtractor.appIdFrom(urlString: url) != nil {
             return true
         }

@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewAppVC" customModule="Wishlist" customModuleProvider="target">
             <connections>
+                <outlet property="saveButton" destination="iJM-KD-e0h" id="pRU-3G-W2o"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,6 +21,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add app to Wishlist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fh2-ee-pUh">
+                    <rect key="frame" x="87" y="215.5" width="201" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rkf-oT-YTH">
                     <rect key="frame" x="301" y="35" width="44" height="44"/>
                     <constraints>
@@ -31,11 +38,37 @@
                         <action selector="close" destination="-1" eventType="touchUpInside" id="tnj-yb-L0S"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We detected a link in your buffer — don’t be shy, tap the field below" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewD-I1-Ea9">
+                    <rect key="frame" x="10" y="264.5" width="355" height="31.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJM-KD-e0h">
+                    <rect key="frame" x="12" y="316" width="351" height="55"/>
+                    <color key="backgroundColor" red="0.85882352939999995" green="0.23921568630000001" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="7UY-uO-GJD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="Save"/>
+                    <connections>
+                        <action selector="addAppId" destination="-1" eventType="touchUpInside" id="CGP-Rf-zlM"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.66666666669999997" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="ewD-I1-Ea9" firstAttribute="top" secondItem="Fh2-ee-pUh" secondAttribute="bottom" constant="20" id="ATw-tV-3l1"/>
                 <constraint firstItem="Rkf-oT-YTH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="AWU-Ux-78X"/>
+                <constraint firstItem="ewD-I1-Ea9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="D4i-Q7-byD"/>
+                <constraint firstItem="iJM-KD-e0h" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="G5F-44-az6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iJM-KD-e0h" secondAttribute="trailing" constant="12" id="Gvj-Na-jbf"/>
+                <constraint firstItem="iJM-KD-e0h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="O8a-Ge-uiP"/>
+                <constraint firstItem="iJM-KD-e0h" firstAttribute="top" secondItem="ewD-I1-Ea9" secondAttribute="bottom" constant="20" id="ZsV-fR-FMc"/>
+                <constraint firstItem="Fh2-ee-pUh" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="cz3-3Q-1vP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Rkf-oT-YTH" secondAttribute="trailing" constant="30" id="t8e-rA-qzA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ewD-I1-Ea9" secondAttribute="trailing" constant="10" id="vaD-h8-Jh7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
