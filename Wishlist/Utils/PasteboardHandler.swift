@@ -22,16 +22,18 @@ class PasteboardHandler {
     }
 
     private static func proposeToAddAppId(appId: String, controller: UIViewController) {
-        let alert = UIAlertController(title: "Add app to Wishlist", message: "We detected a link in your buffer — don’t be shy, tap the field below", preferredStyle: .alert)
-
-        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
-            addAppId(appId: appId)
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alert.addAction(okAction)
-        alert.addAction(cancelAction)
-
-        controller.present(alert, animated: true, completion: nil)
+        let newAppVC = NewAppVC(nibName: "NewAppVC", bundle: nil)
+        controller.present(newAppVC, animated: true, completion: nil)
+//        let alert = UIAlertController(title: "Add app to Wishlist", message: "We detected a link in your buffer — don’t be shy, tap the field below", preferredStyle: .alert)
+//
+//        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+//            addAppId(appId: appId)
+//        }
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//        alert.addAction(okAction)
+//        alert.addAction(cancelAction)
+//
+//        controller.present(alert, animated: true, completion: nil)
     }
 
     private static func addAppId(appId: String) {

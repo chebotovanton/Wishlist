@@ -47,10 +47,18 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
         collectionView?.reloadData()
     }
 
+    //TODO: Move to some Presenter?
     @IBAction private func showAboutPage() {
         let aboutVC = AboutVC(nibName: "AboutVC", bundle: nil)
         aboutVC.modalPresentationStyle = .overCurrentContext
         present(aboutVC, animated: true, completion: nil)
+    }
+
+    //TODO: Move to some Presenter?
+    @IBAction private func showNewAppPage() {
+        let newAppVC = NewAppVC(nibName: "NewAppVC", bundle: nil)
+        newAppVC.modalPresentationStyle = .overCurrentContext
+        present(newAppVC, animated: true, completion: nil)
     }
 
     // MARK: - UICollectionViewDelegate, UICollectionViewDataSource

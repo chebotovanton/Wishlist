@@ -10,15 +10,6 @@ class AboutVC: UIViewController {
         appIcon?.layer.cornerRadius = 18
         appIcon?.clipsToBounds = true
 
-        let blurredBackgroundView = UIVisualEffectView()
-        blurredBackgroundView.frame = view.frame
-        blurredBackgroundView.effect = UIBlurEffect(style: .dark)
-        view.addSubview(blurredBackgroundView)
-        view.sendSubview(toBack: blurredBackgroundView)
+        addBlurredBackground()
     }
-
-    @IBAction private func close() {
-        presentingViewController?.dismiss(animated: true, completion: nil)
-    }
-
 }
