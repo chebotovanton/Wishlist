@@ -17,6 +17,7 @@
                 <outlet property="iconView" destination="Ctn-FM-iRI" id="VoE-HT-eCX"/>
                 <outlet property="priceLabel" destination="Uo7-No-2eh" id="Xrf-D2-Zcb"/>
                 <outlet property="ratingLabel" destination="kvt-IH-jNS" id="vBe-N2-2O8"/>
+                <outlet property="starsView" destination="Zft-nk-iVi" id="zDg-8u-PQy"/>
                 <outlet property="titleLabel" destination="kxx-jy-2LO" id="Ixj-AW-LLT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -62,21 +63,31 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5 ★★★★★" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvt-IH-jNS">
-                                    <rect key="frame" x="150" y="66" width="93" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvt-IH-jNS">
+                                    <rect key="frame" x="150" y="66" width="23" height="18"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zft-nk-iVi" customClass="StarsView" customModule="Wishlist" customModuleProvider="target">
+                                    <rect key="frame" x="178" y="69" width="64" height="12"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="12" id="M8k-m3-xdQ"/>
+                                        <constraint firstAttribute="width" constant="64" id="Tr7-1v-FCS"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="Zft-nk-iVi" firstAttribute="centerY" secondItem="kvt-IH-jNS" secondAttribute="centerY" id="0Jj-D0-4m5"/>
                                 <constraint firstItem="Uo7-No-2eh" firstAttribute="leading" secondItem="Ctn-FM-iRI" secondAttribute="trailing" constant="20" id="9iZ-Ce-1zW"/>
                                 <constraint firstItem="kvt-IH-jNS" firstAttribute="top" secondItem="Uo7-No-2eh" secondAttribute="bottom" id="ADd-sz-Vxe"/>
                                 <constraint firstAttribute="trailing" secondItem="kxx-jy-2LO" secondAttribute="trailing" constant="30" id="GRE-3u-OIj"/>
                                 <constraint firstItem="56i-Kn-ETg" firstAttribute="top" secondItem="kxx-jy-2LO" secondAttribute="bottom" constant="11" id="KPI-p5-3em"/>
                                 <constraint firstAttribute="bottom" secondItem="56i-Kn-ETg" secondAttribute="bottom" constant="20" id="NeR-OE-8Nu"/>
                                 <constraint firstItem="kvt-IH-jNS" firstAttribute="leading" secondItem="Uo7-No-2eh" secondAttribute="leading" id="Tfb-z7-mIU"/>
+                                <constraint firstItem="Zft-nk-iVi" firstAttribute="leading" secondItem="kvt-IH-jNS" secondAttribute="trailing" constant="5" id="VNu-6z-aFF"/>
                                 <constraint firstItem="Uo7-No-2eh" firstAttribute="top" secondItem="aqU-GY-uSD" secondAttribute="top" constant="45" id="YPj-1H-ixy"/>
                                 <constraint firstItem="kxx-jy-2LO" firstAttribute="leading" secondItem="aqU-GY-uSD" secondAttribute="leading" constant="30" id="ack-OB-0rv"/>
                                 <constraint firstItem="Ctn-FM-iRI" firstAttribute="top" secondItem="aqU-GY-uSD" secondAttribute="top" constant="20" id="cue-MG-2yU"/>
@@ -104,7 +115,7 @@
                             <rect key="frame" x="20" y="14.5" width="26" height="26"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="USo-SQ-6kU">
-                            <rect key="frame" x="321" y="18.5" width="10" height="18"/>
+                            <rect key="frame" x="311" y="21" width="20" height="13"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SID-xa-l5n">
                             <rect key="frame" x="56" y="18.5" width="73.5" height="18"/>
@@ -164,7 +175,7 @@
     </objects>
     <resources>
         <image name="appstore" width="26" height="26"/>
-        <image name="arrow" width="10" height="18"/>
+        <image name="arrow" width="20" height="13"/>
         <image name="closeButton" width="29" height="29"/>
     </resources>
 </document>

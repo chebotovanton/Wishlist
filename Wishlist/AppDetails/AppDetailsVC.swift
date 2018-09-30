@@ -10,6 +10,7 @@ class AppDetailsVC: UIViewController, SKStoreProductViewControllerDelegate {
     @IBOutlet private weak var iconView: UIImageView?
     @IBOutlet private weak var priceLabel: UILabel?
     @IBOutlet private weak var ratingLabel: UILabel?
+    @IBOutlet private weak var starsView: StarsView?
 
     @IBOutlet private weak var appStoreBackground: UIView?
 
@@ -40,6 +41,7 @@ class AppDetailsVC: UIViewController, SKStoreProductViewControllerDelegate {
 
         priceLabel?.text = info.formattedPrice
         ratingLabel?.text = String(info.rating)
+        starsView?.setup(rating: info.rating)
         iconView?.sd_setImage(with: URL(string: info.iconUrlString), completed: nil)
     }
 
