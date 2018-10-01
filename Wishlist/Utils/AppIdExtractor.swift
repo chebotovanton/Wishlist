@@ -1,7 +1,7 @@
 import Foundation
 
 final class AppIdExtractor {
-    //TODO: Tests!
+    //TODO: What formats to support?!
     static func appIdFrom(urlString: String) -> String? {
         if let idRange = urlString.range(of: "/id") {
             let trailing = urlString[idRange.upperBound...]

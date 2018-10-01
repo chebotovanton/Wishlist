@@ -17,6 +17,7 @@ final class AppsListPresenter: AppInfoLoaderDelegate {
     }
 
     func getAppsInfo() {
+        items = []
         let appIds = AppsKeeper.getSavedAppIds()
         for appId in appIds {
             let loader = AppInfoLoader(appId: appId)
@@ -49,7 +50,6 @@ final class AppsListPresenter: AppInfoLoaderDelegate {
     }
 
     @objc private func reloadData() {
-        //TODO: what to do here?
         getAppsInfo()
     }
 

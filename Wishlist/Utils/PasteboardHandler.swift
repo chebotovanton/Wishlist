@@ -6,6 +6,8 @@ class PasteboardHandler {
         //tests!
         if let appId = getPasteboardId() {
             proposeToAddAppId(appId: appId, controller: controller)
+        } else {
+            RateUsManager.requestReview()
         }
     }
 

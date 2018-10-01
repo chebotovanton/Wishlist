@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9F16378F211C9BF30035A1AD /* AppsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F16378E211C9BF30035A1AD /* AppsListPresenter.swift */; };
 		9F163791211CA0790035A1AD /* AppInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F163790211CA0790035A1AD /* AppInfoResponse.swift */; };
+		9F1A7B3F21626EA000F40EA8 /* EmailSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A7B3E21626EA000F40EA8 /* EmailSender.swift */; };
 		9F2E6F0221136C6400441C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E6F0121136C6400441C1B /* AppDelegate.swift */; };
 		9F2E6F0421136C6400441C1B /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E6F0321136C6400441C1B /* ListVC.swift */; };
 		9F2E6F0B21136C6600441C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E6F0A21136C6600441C1B /* Assets.xcassets */; };
@@ -39,6 +40,8 @@
 		9FB81B862161037C00E9DD1B /* NewAppVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB81B842161037C00E9DD1B /* NewAppVC.xib */; };
 		9FB81B882161039600E9DD1B /* UIViewController+BlurredBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81B872161039600E9DD1B /* UIViewController+BlurredBackground.swift */; };
 		9FB81B8A2161195B00E9DD1B /* ListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB81B892161195B00E9DD1B /* ListVC.xib */; };
+		9FB81B8C21612ADF00E9DD1B /* RateUsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81B8B21612ADF00E9DD1B /* RateUsManager.swift */; };
+		9FB81B8E21612C9C00E9DD1B /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB81B8D21612C9C00E9DD1B /* UserDefaultsManager.swift */; };
 		9FF60FFC2128A1300012BF53 /* CollectionSwipableCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF60FF22128A1300012BF53 /* CollectionSwipableCellExtension.swift */; };
 		9FF60FFD2128A1300012BF53 /* UITableViewCell+CollectionSwipableCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF60FF32128A1300012BF53 /* UITableViewCell+CollectionSwipableCellExtension.swift */; };
 		9FF60FFE2128A1300012BF53 /* UICollectionViewCell+CollectionSwipableCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF60FF42128A1300012BF53 /* UICollectionViewCell+CollectionSwipableCellExtension.swift */; };
@@ -94,6 +97,7 @@
 		73E68C71A127DEEA5C8DD170 /* Pods-Wishlist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wishlist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wishlist/Pods-Wishlist.debug.xcconfig"; sourceTree = "<group>"; };
 		9F16378E211C9BF30035A1AD /* AppsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsListPresenter.swift; sourceTree = "<group>"; };
 		9F163790211CA0790035A1AD /* AppInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoResponse.swift; sourceTree = "<group>"; };
+		9F1A7B3E21626EA000F40EA8 /* EmailSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSender.swift; sourceTree = "<group>"; };
 		9F2E6EFE21136C6400441C1B /* Wishlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wishlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F2E6F0121136C6400441C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F2E6F0321136C6400441C1B /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 		9FB81B842161037C00E9DD1B /* NewAppVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAppVC.xib; sourceTree = "<group>"; };
 		9FB81B872161039600E9DD1B /* UIViewController+BlurredBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+BlurredBackground.swift"; sourceTree = "<group>"; };
 		9FB81B892161195B00E9DD1B /* ListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListVC.xib; sourceTree = "<group>"; };
+		9FB81B8B21612ADF00E9DD1B /* RateUsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsManager.swift; sourceTree = "<group>"; };
+		9FB81B8D21612C9C00E9DD1B /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		9FF60FF22128A1300012BF53 /* CollectionSwipableCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSwipableCellExtension.swift; sourceTree = "<group>"; };
 		9FF60FF32128A1300012BF53 /* UITableViewCell+CollectionSwipableCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+CollectionSwipableCellExtension.swift"; sourceTree = "<group>"; };
 		9FF60FF42128A1300012BF53 /* UICollectionViewCell+CollectionSwipableCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+CollectionSwipableCellExtension.swift"; sourceTree = "<group>"; };
@@ -191,6 +197,14 @@
 				D167DF153ED084467829D149 /* Pods_Wishlist.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F1A7B3D21626EA000F40EA8 /* EmailSender */ = {
+			isa = PBXGroup;
+			children = (
+				9F1A7B3E21626EA000F40EA8 /* EmailSender.swift */,
+			);
+			path = EmailSender;
 			sourceTree = "<group>";
 		};
 		9F2E6EF521136C6400441C1B = {
@@ -311,10 +325,13 @@
 		9F7EDA4C2121EF0600FFB014 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9F1A7B3D21626EA000F40EA8 /* EmailSender */,
 				9FF60FF12128A1300012BF53 /* SwipableCell */,
 				9F2E704C211C904400441C1B /* AppsKeeper.swift */,
 				9F7EDA4D2121EF2600FFB014 /* AppIdExtractor.swift */,
 				9F5F6696213450FF00755F6A /* PasteboardHandler.swift */,
+				9FB81B8B21612ADF00E9DD1B /* RateUsManager.swift */,
+				9FB81B8D21612C9C00E9DD1B /* UserDefaultsManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -611,11 +628,13 @@
 				9F7EDA10211DE26100FFB014 /* AppDetailsVC.swift in Sources */,
 				9F2E7051211C971200441C1B /* AppListItem.swift in Sources */,
 				9FF610042128A1300012BF53 /* CollectionSwipableCellHandler.swift in Sources */,
+				9F1A7B3F21626EA000F40EA8 /* EmailSender.swift in Sources */,
 				9F16378F211C9BF30035A1AD /* AppsListPresenter.swift in Sources */,
 				9FF610032128A1300012BF53 /* SwipableUICollectionView.swift in Sources */,
 				9FF60FFF2128A1300012BF53 /* CollectionSwipableCellOneButtonLayout.swift in Sources */,
 				9FF610012128A1300012BF53 /* SwipableUITableView.swift in Sources */,
 				9FF60FFD2128A1300012BF53 /* UITableViewCell+CollectionSwipableCellExtension.swift in Sources */,
+				9FB81B8E21612C9C00E9DD1B /* UserDefaultsManager.swift in Sources */,
 				9F2E6F3421136D9800441C1B /* ListCell.swift in Sources */,
 				9FB81B882161039600E9DD1B /* UIViewController+BlurredBackground.swift in Sources */,
 				9FF610002128A1300012BF53 /* SwipableCollection.swift in Sources */,
@@ -628,6 +647,7 @@
 				9F2E6F0421136C6400441C1B /* ListVC.swift in Sources */,
 				9F7EDA4E2121EF2600FFB014 /* AppIdExtractor.swift in Sources */,
 				9FB81B80215FBF2B00E9DD1B /* AboutVC.swift in Sources */,
+				9FB81B8C21612ADF00E9DD1B /* RateUsManager.swift in Sources */,
 				9F5F6697213450FF00755F6A /* PasteboardHandler.swift in Sources */,
 				9F2E704B211C838600441C1B /* AppInfoLoader.swift in Sources */,
 				9F2E704F211C911F00441C1B /* AppInfo.swift in Sources */,
@@ -948,6 +968,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64AA6VGY67;
 				INFOPLIST_FILE = WishlistShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -968,6 +989,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64AA6VGY67;
 				INFOPLIST_FILE = WishlistShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

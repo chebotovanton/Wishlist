@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutVC" customModule="Wishlist" customModuleProvider="target">
             <connections>
                 <outlet property="appIcon" destination="CFy-sY-AUd" id="Jqc-DF-TJZ"/>
+                <outlet property="emailButton" destination="CkY-7j-ebO" id="iHI-sw-wp0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -40,19 +41,15 @@
                         <constraint firstAttribute="height" constant="100" id="cSR-zF-NMd"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exn-dR-Dyr">
-                    <rect key="frame" x="151" y="434.5" width="73" height="36"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                    <state key="normal" title="Rate Us">
-                        <color key="titleColor" red="0.85882352939999995" green="0.23921568630000001" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkY-7j-ebO">
-                    <rect key="frame" x="126.5" y="485.5" width="122" height="36"/>
+                    <rect key="frame" x="126.5" y="434.5" width="122" height="36"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <state key="normal" title="Write a letter">
                         <color key="titleColor" red="0.85882352939999995" green="0.23921568630000001" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="writeUs" destination="-1" eventType="touchUpInside" id="sTc-yI-YfR"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wishlist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0S-KF-Kgr">
                     <rect key="frame" x="140" y="248" width="95" height="29"/>
@@ -73,12 +70,10 @@
                 <constraint firstItem="B0S-KF-Kgr" firstAttribute="top" secondItem="CFy-sY-AUd" secondAttribute="bottom" constant="30" id="4GX-N8-cCL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="H9T-nO-hW6" secondAttribute="trailing" constant="30" id="7jt-Hn-SDM"/>
                 <constraint firstItem="B0S-KF-Kgr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="8Wi-bl-JsX"/>
-                <constraint firstItem="Exn-dR-Dyr" firstAttribute="top" secondItem="zlf-1j-HIw" secondAttribute="bottom" constant="44" id="Eft-VY-IPs"/>
                 <constraint firstItem="CFy-sY-AUd" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Qny-Hq-K7R"/>
                 <constraint firstItem="H9T-nO-hW6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="S6g-fb-KJq"/>
                 <constraint firstItem="zlf-1j-HIw" firstAttribute="top" secondItem="B0S-KF-Kgr" secondAttribute="bottom" constant="20" id="Tck-GQ-ovN"/>
-                <constraint firstItem="CkY-7j-ebO" firstAttribute="top" secondItem="Exn-dR-Dyr" secondAttribute="bottom" constant="15" id="idg-uy-OHH"/>
-                <constraint firstItem="Exn-dR-Dyr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="k0I-51-j2N"/>
+                <constraint firstItem="CkY-7j-ebO" firstAttribute="top" secondItem="zlf-1j-HIw" secondAttribute="bottom" constant="44" id="eU0-gb-ykr"/>
                 <constraint firstItem="CkY-7j-ebO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="k98-tl-4gA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zlf-1j-HIw" secondAttribute="trailing" constant="20" id="lmL-5d-0R3"/>
                 <constraint firstItem="zlf-1j-HIw" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="qcm-qj-rEU"/>
