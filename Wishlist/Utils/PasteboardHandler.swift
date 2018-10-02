@@ -11,7 +11,7 @@ class PasteboardHandler {
         }
     }
 
-    private static func getPasteboardId() -> String? {
+    static func getPasteboardId() -> String? {
         for string in UIPasteboard.general.strings ?? [] {
             if let appId = AppIdExtractor.appIdFrom(urlString: string), !AppsKeeper.hasAppId(appId: appId) {
                 return appId
@@ -22,9 +22,10 @@ class PasteboardHandler {
     }
 
     private static func proposeToAddAppId(appId: String, controller: UIViewController) {
-        let newAppVC = NewAppVC(nibName: "NewAppVC", bundle: nil)
-        newAppVC.appId = appId
-        newAppVC.modalPresentationStyle = .overCurrentContext
-        controller.present(newAppVC, animated: true, completion: nil)
+        //TODO: Got weird
+        if let navVC = controller as? UINavigationController, let listVC = navVC.viewControllers.first as? ListVC, let presenter = listVC.presenter as? NewAppVCDelegate {
+            let newAppVC = NewAppVC(nibName: "NewAppVC", delegate: presenter, appId: appId)
+            controller.present(newAppVC, animated: true, completion: nil)
+        }
     }
 }

@@ -1,13 +1,26 @@
 import UIKit
 
+protocol NewAppVCDelegate: class {
+    func didAddApp(appId: String)
+}
+
 class NewAppVC: UIViewController {
-
-    //TODO: Move const somewhere
-    static let notificationName = "AppIdAdded"
-
+    weak var delegate: NewAppVCDelegate?
     @IBOutlet private weak var saveButton: UIButton?
+    var appId: String
 
-    var appId: String?
+    init(nibName: String, delegate: NewAppVCDelegate, appId: String) {
+        self.appId = appId
+        self.delegate = delegate
+
+        super.init(nibName: nibName, bundle: nil)
+
+        modalPresentationStyle = .overCurrentContext
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,15 +32,7 @@ class NewAppVC: UIViewController {
     }
 
     @IBAction private func addAppId() {
-        if let appId = self.appId {
-            AppsKeeper.addAppId(appId: appId)
-            notifyDidAddAppId()
-        }
-    }
-
-    private func notifyDidAddAppId() {
-        let notification = Notification(name: Notification.Name(rawValue: NewAppVC.notificationName))
-        NotificationCenter.default.post(notification)
-        close()
+        AppsKeeper.addAppId(appId: appId)
+        delegate?.didAddApp(appId: appId)
     }
 }

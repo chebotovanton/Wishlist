@@ -1,20 +1,17 @@
 import UIKit
 
-final class AppsListPresenter: AppInfoLoaderDelegate {
+protocol AppListPresenterProtocol {
+    func showNewAppPage()
+    func showAboutPage()
+    func showAppInfo(appInfo: AppInfo)
+    func getAppsInfo()
+    func setController(controller: ListVC)
+}
 
+final class AppsListPresenter: AppListPresenterProtocol, AppInfoLoaderDelegate, NewAppVCDelegate {
     var infoLoaders: [AppInfoLoader] = []
     var items: [AppListItem] = []
     weak var controller: ListVC?
-
-    init() {
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadData),
-                                               name: NSNotification.Name(rawValue: NewAppVC.notificationName),
-                                               object: nil)
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
 
     func getAppsInfo() {
         items = []
@@ -32,7 +29,7 @@ final class AppsListPresenter: AppInfoLoaderDelegate {
     }
 
     func didFailLoading(_ appId: String, loader: AppInfoLoader ) {
-        //TODO: should we notify user?
+        //TODO: should we notify user? What to show to user?
         if let index = infoLoaders.index(where: { (loader) -> Bool in loader.appId == appId}) {
             infoLoaders.remove(at: index)
         }
@@ -49,8 +46,35 @@ final class AppsListPresenter: AppInfoLoaderDelegate {
         controller?.updateList(items)
     }
 
-    @objc private func reloadData() {
+    // MARK: - AppListPresenterProtocol
+    //TODO: What's the right direction of control?
+    func setController(controller: ListVC) {
+        self.controller = controller
+    }
+
+    func showAboutPage() {
+        let aboutVC = AboutVC(nibName: "AboutVC", bundle: nil)
+        aboutVC.modalPresentationStyle = .overCurrentContext
+        controller?.present(aboutVC, animated: true, completion: nil)
+    }
+
+    func showNewAppPage() {
+        if let appId = PasteboardHandler.getPasteboardId() {
+            let newAppVC = NewAppVC(nibName: "NewAppVC", delegate: self, appId: appId)
+            controller?.present(newAppVC, animated: true, completion: nil)
+        }
+    }
+
+    func showAppInfo(appInfo: AppInfo) {
+        let detailsVC = AppDetailsVC(nibName: "AppDetailsVC", bundle: nil)
+        detailsVC.setup(appInfo)
+        controller?.navigationController?.pushViewController(detailsVC, animated: true)
+    }
+
+    // MARK: - NewAppVCDelegate
+    func didAddApp(appId: String) {
         getAppsInfo()
+        controller?.dismiss(animated: true, completion: nil)
     }
 
 }

@@ -7,7 +7,7 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet private weak var topGradient: GradientView?
 
     private var items: [AppListItem] = []
-    private let presenter = AppsListPresenter()
+    let presenter: AppListPresenterProtocol = AppsListPresenter()
     private var swipeExtension: CollectionSwipableCellExtension?
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -37,7 +37,7 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
             swipeExtension?.isEnabled = true
         }
 
-        presenter.controller = self
+        presenter.setController(controller: self)
         presenter.getAppsInfo()
     }
 
@@ -47,18 +47,12 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
         collectionView?.reloadData()
     }
 
-    //TODO: Move to some Presenter?
     @IBAction private func showAboutPage() {
-        let aboutVC = AboutVC(nibName: "AboutVC", bundle: nil)
-        aboutVC.modalPresentationStyle = .overCurrentContext
-        present(aboutVC, animated: true, completion: nil)
+        presenter.showAboutPage()
     }
 
-    //TODO: Move to some Presenter?
     @IBAction private func showNewAppPage() {
-        let newAppVC = NewAppVC(nibName: "NewAppVC", bundle: nil)
-        newAppVC.modalPresentationStyle = .overCurrentContext
-        present(newAppVC, animated: true, completion: nil)
+        presenter.showNewAppPage()
     }
 
     // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
@@ -93,9 +87,7 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
         let item = items[indexPath.item]
 
         if let appInfo = item.appInfo {
-            let detailsVC = AppDetailsVC(nibName: "AppDetailsVC", bundle: nil)
-            detailsVC.setup(appInfo)
-            navigationController?.pushViewController(detailsVC, animated: true)
+            presenter.showAppInfo(appInfo: appInfo)
         }
     }
 
