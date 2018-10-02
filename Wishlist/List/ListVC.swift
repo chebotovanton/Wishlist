@@ -40,6 +40,10 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
     func updateList(_ items: [AppListItem]) {
         self.items = items
         collectionView?.reloadData()
+        setElementsVisibility()
+    }
+
+    private func setElementsVisibility() {
         collectionView?.isHidden = (items.count == 0)
         instructionsView?.isHidden = (items.count > 0)
     }
@@ -115,6 +119,7 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
             AppsKeeper.removeAppId(appId: item.appId)
             self.items.remove(at: indexPath.item)
             self.collectionView?.deleteItems(at: [indexPath])
+            self.setElementsVisibility()
         }
 
         return layout
