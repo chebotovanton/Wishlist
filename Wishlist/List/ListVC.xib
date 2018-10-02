@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListVC" customModule="Wishlist" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="mX3-pK-Tep" id="h6q-7s-GIf"/>
+                <outlet property="instructionsView" destination="p9B-t9-pmc" id="VR5-0N-7k9"/>
                 <outlet property="topGradient" destination="98Q-9P-Xqd" id="DPT-aF-7SB"/>
                 <outlet property="view" destination="IoB-U8-BNs" id="0II-rj-8J3"/>
             </connections>
@@ -37,6 +38,89 @@
                         <outlet property="delegate" destination="-1" id="ptx-gJ-YIv"/>
                     </connections>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9B-t9-pmc" userLabel="InstructionsView">
+                    <rect key="frame" x="0.0" y="66" width="375" height="601"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hmm, I’m empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pig-2K-QiF">
+                            <rect key="frame" x="30" y="451.5" width="315" height="36"/>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQA-3c-k0w">
+                            <rect key="frame" x="30" y="487.5" width="315" height="93.5"/>
+                            <attributedString key="attributedText">
+                                <fragment content="• Go to the ">
+                                    <attributes>
+                                        <color key="NSBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <font key="NSFont" metaFont="system"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="App Store">
+                                    <attributes>
+                                        <color key="NSBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="NSColor" red="0.85882352941176465" green="0.23921568627450979" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
+                                        <font key="NSFont" size="13" name=".AppleSystemUIFont"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment>
+                                    <string key="content">
+• Copy link to the app you want to save
+• Come back here and tap the </string>
+                                    <attributes>
+                                        <color key="NSBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <font key="NSFont" metaFont="system"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="Add">
+                                    <attributes>
+                                        <color key="NSBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="NSColor" red="0.85882352941176465" green="0.23921568627450979" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
+                                        <font key="NSFont" metaFont="system"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment>
+                                    <string key="content"> button
+• Yupeee! You are wonderful!</string>
+                                    <attributes>
+                                        <color key="NSBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <font key="NSFont" metaFont="system"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <color key="highlightedColor" red="0.85882352939999995" green="0.23921568630000001" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Web-D8-ux9">
+                            <rect key="frame" x="70" y="487.5" width="195" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="88e-Eg-cG3"/>
+                            </constraints>
+                            <connections>
+                                <action selector="openAppStore" destination="-1" eventType="touchUpInside" id="bHj-pt-Z3K"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="sQA-3c-k0w" firstAttribute="leading" secondItem="p9B-t9-pmc" secondAttribute="leading" constant="30" id="501-hl-4gU"/>
+                        <constraint firstItem="Web-D8-ux9" firstAttribute="leading" secondItem="Pig-2K-QiF" secondAttribute="leading" constant="40" id="Hoz-cc-0uq"/>
+                        <constraint firstItem="Web-D8-ux9" firstAttribute="top" secondItem="sQA-3c-k0w" secondAttribute="top" id="LEf-J4-acB"/>
+                        <constraint firstAttribute="trailing" secondItem="sQA-3c-k0w" secondAttribute="trailing" constant="30" id="X8h-as-2BW"/>
+                        <constraint firstItem="sQA-3c-k0w" firstAttribute="top" secondItem="Pig-2K-QiF" secondAttribute="bottom" id="ejG-lp-gNK"/>
+                        <constraint firstItem="Pig-2K-QiF" firstAttribute="leading" secondItem="p9B-t9-pmc" secondAttribute="leading" constant="30" id="fEN-zm-qbw"/>
+                        <constraint firstItem="Pig-2K-QiF" firstAttribute="trailing" secondItem="Web-D8-ux9" secondAttribute="trailing" constant="80" id="gA5-eN-S9R"/>
+                        <constraint firstAttribute="trailing" secondItem="Pig-2K-QiF" secondAttribute="trailing" constant="30" id="iwG-bm-tNT"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98Q-9P-Xqd" customClass="GradientView" customModule="Wishlist" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="66" width="375" height="15"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,16 +152,21 @@
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="n0h-oT-jhH" firstAttribute="bottom" secondItem="mX3-pK-Tep" secondAttribute="bottom" id="4f9-ib-bdL"/>
+                <constraint firstItem="p9B-t9-pmc" firstAttribute="leading" secondItem="n0h-oT-jhH" secondAttribute="leading" id="7ww-ke-By8"/>
+                <constraint firstItem="p9B-t9-pmc" firstAttribute="top" secondItem="mX3-pK-Tep" secondAttribute="top" id="BPf-Vm-KcY"/>
                 <constraint firstItem="n0h-oT-jhH" firstAttribute="trailing" secondItem="EW8-uw-i2y" secondAttribute="trailing" constant="20" id="Czp-wU-HUA"/>
                 <constraint firstItem="98Q-9P-Xqd" firstAttribute="leading" secondItem="n0h-oT-jhH" secondAttribute="leading" id="DDE-K0-F8q"/>
                 <constraint firstItem="n0h-oT-jhH" firstAttribute="trailing" secondItem="mX3-pK-Tep" secondAttribute="trailing" id="EET-ho-HBx"/>
+                <constraint firstItem="n0h-oT-jhH" firstAttribute="bottom" secondItem="p9B-t9-pmc" secondAttribute="bottom" id="GWH-hS-F7n"/>
                 <constraint firstItem="n0h-oT-jhH" firstAttribute="trailing" secondItem="98Q-9P-Xqd" secondAttribute="trailing" id="GwB-OM-UmD"/>
                 <constraint firstItem="98Q-9P-Xqd" firstAttribute="top" secondItem="MC2-rm-UGo" secondAttribute="bottom" id="LTT-Gb-VWq"/>
                 <constraint firstItem="mX3-pK-Tep" firstAttribute="leading" secondItem="n0h-oT-jhH" secondAttribute="leading" id="NNI-sx-uOT"/>
+                <constraint firstItem="n0h-oT-jhH" firstAttribute="bottom" secondItem="sQA-3c-k0w" secondAttribute="bottom" constant="20" id="Oml-Am-IwX"/>
                 <constraint firstItem="MC2-rm-UGo" firstAttribute="leading" secondItem="n0h-oT-jhH" secondAttribute="leading" constant="20" id="SKY-ki-Bhl"/>
                 <constraint firstItem="mX3-pK-Tep" firstAttribute="top" secondItem="98Q-9P-Xqd" secondAttribute="top" id="XcD-yc-aCn"/>
                 <constraint firstItem="EW8-uw-i2y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MC2-rm-UGo" secondAttribute="trailing" constant="10" id="c5j-pp-OXj"/>
                 <constraint firstItem="MC2-rm-UGo" firstAttribute="top" secondItem="n0h-oT-jhH" secondAttribute="top" constant="10" id="i9j-bZ-XzV"/>
+                <constraint firstItem="n0h-oT-jhH" firstAttribute="trailing" secondItem="p9B-t9-pmc" secondAttribute="trailing" id="kC1-kb-ydM"/>
                 <constraint firstItem="EW8-uw-i2y" firstAttribute="firstBaseline" secondItem="MC2-rm-UGo" secondAttribute="firstBaseline" id="pJq-Vq-HtR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="n0h-oT-jhH"/>

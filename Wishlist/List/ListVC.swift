@@ -3,6 +3,7 @@ import UIKit
 final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CollectionSwipableCellExtensionDelegate {
 
     @IBOutlet private weak var collectionView: UICollectionView?
+    @IBOutlet private weak var instructionsView: UIView?
     @IBOutlet private weak var topGradient: GradientView?
 
     private var items: [AppListItem] = []
@@ -38,8 +39,9 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
 
     func updateList(_ items: [AppListItem]) {
         self.items = items
-
         collectionView?.reloadData()
+        collectionView?.isHidden = (items.count == 0)
+        instructionsView?.isHidden = (items.count > 0)
     }
 
     @IBAction private func showAboutPage() {
@@ -48,6 +50,12 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
 
     @IBAction private func showNewAppPage() {
         presenter.showNewAppPage()
+    }
+
+    @IBAction private func openAppStore() {
+        if let url = URL(string: "itms-apps://") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 
     // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
