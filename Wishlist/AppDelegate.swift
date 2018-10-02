@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navVC.isNavigationBarHidden = true
         window!.rootViewController = navVC
 
+        RateUsManager.requestReview()
+
         return true
     }
 

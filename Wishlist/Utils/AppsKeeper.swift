@@ -6,7 +6,7 @@ final class AppsKeeper {
 
     static func getSavedAppIds() -> [String] {
         let array = userDefaults().array(forKey: kAppsIdsKey)
-        return array as? [String] ?? ["1155618808", "1147642630", "1157416619", "762156897"]
+        return array as? [String] ?? []
     }
 
     static func addAppId(appId: String) {

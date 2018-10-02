@@ -62,6 +62,10 @@ final class AppsListPresenter: AppListPresenterProtocol, AppInfoLoaderDelegate, 
         if let appId = PasteboardHandler.getPasteboardId() {
             let newAppVC = NewAppVC(nibName: "NewAppVC", delegate: self, appId: appId)
             controller?.present(newAppVC, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Oops", message: "Seems like you don't have any new app links in your pasteboard", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            controller?.present(alert, animated: true, completion: nil)
         }
     }
 
