@@ -291,49 +291,51 @@ class SwipableCellLayouter {
             return
         }
 
-        struct FrameInfo {
-            let duration: Double
-            let value: CGFloat
-        }
-
         let animationBlock = { (value: CGFloat) -> Void in
             self.swipePosition = value
             self.item.view.layoutIfNeeded()
         }
+        let frameInfos = createAnimationFrames(value: value)
+        UIView.animateKeyframes(withDuration: 0.3,
+                                delay: 0,
+                                options: [.beginFromCurrentState, .allowUserInteraction, .calculationModeCubic],
+                                animations: {
+                                    var frameStart: Double = 0
+                                    for frameInfo in frameInfos {
+                                        UIView.addKeyframe(withRelativeStartTime: frameStart, relativeDuration: frameInfo.duration, animations: {
+                                            animationBlock(frameInfo.value)
+                                        })
+                                        frameStart += frameInfo.duration
+                                    }
+                                },
+                                completion: { (finished) in completion?() })
+    }
 
-        UIView.animateKeyframes(withDuration: 0.3, delay: 0, options: [.beginFromCurrentState, .allowUserInteraction, .calculationModeCubic], animations: {
-            let bounceValue = self.item.view.bounds.width * 0.03
+    struct FrameInfo {
+        let duration: Double
+        let value: CGFloat
+    }
 
-            let frame1 = FrameInfo(
-                duration: 0.4,
-                value: value >= 0 ? value + bounceValue * 0.9 : value - bounceValue * 0.9
-            )
-            let frame2 = FrameInfo(
-                duration: 0.2,
-                value: value >= 0 ? value + bounceValue : value - bounceValue
-            )
-            let frame3 = FrameInfo(
-                duration: 0.1,
-                value: frame2.value + (value - frame2.value) * 0.5
-            )
-            let frame4 = FrameInfo(
-                duration: 0.3,
-                value: value
-            )
+    private func createAnimationFrames(value: CGFloat) -> [FrameInfo] {
+        let bounceValue = self.item.view.bounds.width * 0.03
+        let frame1 = FrameInfo(
+            duration: 0.4,
+            value: value >= 0 ? value + bounceValue * 0.9 : value - bounceValue * 0.9
+        )
+        let frame2 = FrameInfo(
+            duration: 0.2,
+            value: value >= 0 ? value + bounceValue : value - bounceValue
+        )
+        let frame3 = FrameInfo(
+            duration: 0.1,
+            value: frame2.value + (value - frame2.value) * 0.5
+        )
+        let frame4 = FrameInfo(
+            duration: 0.3,
+            value: value
+        )
 
-            let frameInfos = [frame1, frame2, frame3, frame4]
-
-            var frameStart: Double = 0
-            for frameInfo in frameInfos {
-                UIView.addKeyframe(withRelativeStartTime: frameStart, relativeDuration: frameInfo.duration, animations: {
-                    animationBlock(frameInfo.value)
-                })
-
-                frameStart += frameInfo.duration
-            }
-        }) { (finished) in
-            completion?()
-        }
+        return [frame1, frame2, frame3, frame4]
     }
 
     private func swipeWidth() -> CGFloat {
