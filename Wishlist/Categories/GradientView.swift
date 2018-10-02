@@ -17,7 +17,15 @@ final class GradientView: UIView {
         setupView()
     }
 
-    func setupView() {
+    func switchToBlackMode() {
+        startPoint = CGPoint(x: 0, y: 0)
+        endPoint = CGPoint(x: 0, y: 1)
+        firstColor = UIColor.black.withAlphaComponent(1).cgColor
+        secondColor = UIColor.clear.cgColor
+        setupView()
+    }
+
+    private func setupView() {
         autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
         guard let theLayer = self.layer as? CAGradientLayer else {

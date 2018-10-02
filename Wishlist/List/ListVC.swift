@@ -1,5 +1,4 @@
 import UIKit
-import SDWebImage
 
 final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CollectionSwipableCellExtensionDelegate {
 
@@ -17,11 +16,7 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        topGradient?.startPoint = CGPoint(x: 0, y: 0)
-        topGradient?.endPoint = CGPoint(x: 0, y: 1)
-        topGradient?.firstColor = UIColor.black.withAlphaComponent(1).cgColor
-        topGradient?.secondColor = UIColor.clear.cgColor
-        topGradient?.setupView()
+        topGradient?.switchToBlackMode()
 
         collectionView?.register(UINib(nibName: "ListCell", bundle: nil), forCellWithReuseIdentifier: ListCell.reuseIdentifier())
 
@@ -84,9 +79,7 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let item = items[indexPath.item]
-
-        if let appInfo = item.appInfo {
+        if let appInfo = items[indexPath.item].appInfo {
             presenter.showAppInfo(appInfo: appInfo)
         }
     }
@@ -108,8 +101,7 @@ final class ListVC: UIViewController, UICollectionViewDelegate, UICollectionView
         layout.button.tintColor = .red
 
         layout.action = {[weak self] in
-            guard let `self` = self else { return }
-            guard indexPath.item < self.items.count else { return }
+            guard let `self` = self, indexPath.item < self.items.count else { return }
 
             let item = self.items[indexPath.item]
             AppsKeeper.removeAppId(appId: item.appId)
