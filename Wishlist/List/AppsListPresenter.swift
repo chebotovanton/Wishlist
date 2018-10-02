@@ -47,7 +47,6 @@ final class AppsListPresenter: AppListPresenterProtocol, AppInfoLoaderDelegate, 
     }
 
     // MARK: - AppListPresenterProtocol
-    //TODO: What's the right direction of control?
     func setController(controller: ListVC) {
         self.controller = controller
     }
