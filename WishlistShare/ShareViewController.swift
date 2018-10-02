@@ -2,10 +2,9 @@ import UIKit
 import Social
 import MobileCoreServices
 
+//TODO: Can we test anything here?
 class ShareViewController: SLComposeServiceViewController {
-
-    private var urlString: String?
-    private var textString: String?
+    private var appId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,42 +17,35 @@ class ShareViewController: SLComposeServiceViewController {
         for attachment in attachments {
             if attachment.hasItemConformingToTypeIdentifier(contentTypeURL) {
                 attachment.loadItem(forTypeIdentifier: contentTypeURL, options: nil, completionHandler: { (results, error) in
-                    if let url = results as? URL {
-                        self.urlString = url.absoluteString
+                    if let url = results as? URL, let appId = AppIdExtractor.appIdFrom(urlString: url.absoluteString) {
+                        self.appId = appId
+                        _ = self.isContentValid()
                     }
                 })
             }
             if attachment.hasItemConformingToTypeIdentifier(contentTypeText) {
                 attachment.loadItem(forTypeIdentifier: contentTypeText, options: nil, completionHandler: { (results, error) in
-                    self.textString = results as? String
+                    if let text = results as? String, let appId = AppIdExtractor.appIdFrom(urlString: text) {
+                        self.appId = appId
+                        _ = self.isContentValid()
+                    }
                 })
             }
         }
     }
 
     override func isContentValid() -> Bool {
-        //TODO: What's going on here?
-        if let url = urlString, AppIdExtractor.appIdFrom(urlString: url) != nil {
-            return true
-        }
-        if let text = textString, AppIdExtractor.appIdFrom(urlString: text) != nil {
-            return true
-        }
-        return false
+        return appId != nil
     }
 
     override func didSelectPost() {
-        if let url = urlString, let appId = AppIdExtractor.appIdFrom(urlString: url) {
-            AppsKeeper.addAppId(appId: appId)
-        } else if let text = textString, let appId = AppIdExtractor.appIdFrom(urlString: text) {
+        if let appId = self.appId {
             AppsKeeper.addAppId(appId: appId)
         }
-
         super.didSelectPost()
     }
 
     override func configurationItems() -> [Any]! {
         return []
     }
-
 }

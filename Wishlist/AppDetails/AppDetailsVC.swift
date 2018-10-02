@@ -60,11 +60,7 @@ class AppDetailsVC: UIViewController, SKStoreProductViewControllerDelegate {
         storeViewController.delegate = self
 
         let parameters = [ SKStoreProductParameterITunesItemIdentifier : appStoreId]
-        storeViewController.loadProduct(withParameters: parameters) { [weak self] (loaded, error) -> Void in
-//            if loaded {
-//                self?.present(storeViewController, animated: true, completion: nil)
-//            }
-        }
+        storeViewController.loadProduct(withParameters: parameters, completionBlock: nil)
         present(storeViewController, animated: true, completion: nil)
     }
 
